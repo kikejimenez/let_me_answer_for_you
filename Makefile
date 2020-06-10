@@ -1,10 +1,10 @@
 SRC = $(wildcard nbs/*.ipynb)
 
-all: job_offer_classifier docs
+all: let_me_answer_for_you docs
 
-job_offer_classifier: $(SRC)
+let_me_answer_for_you: $(SRC)
 	nbdev_build_lib
-	touch job_offer_classifier
+	touch let_me_answer_for_you
 
 docs_serve: docs
 	cd docs && bundle exec jekyll serve
