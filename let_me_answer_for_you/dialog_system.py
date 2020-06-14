@@ -15,8 +15,9 @@ from pathlib import Path
 import logging
 
 logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', level=logging.DEBUG, datefmt='%I:%M:%S')
-logging.info("test: hola")
-logging.error('test: adios')
+logging.info("Hello! Welcome to our automated dialog system!")
+logging.debug("test: for Debug?")
+logging.error('test: for Error')
 
 # Cell
 def run_shell_installs():
@@ -160,13 +161,16 @@ def question_response(data, qa_models, num_returned_values_per_squad_model=1):
     return responses, new_answer(question, data, qa_models)
 
 # Cell
-def dialog_system():
-    '''Main Dialog System
+def dialog_system(context_data_file=None, faq_data_file=None):
+    '''
+     Main Dialog System
     '''
 
     PARENT_DIR = popen('dirname $PWD').read().strip()
-    CONTEXT_DATA_FILE = path.join(PARENT_DIR, 'data/context_data.csv')
-    FAQ_DATA_FILE = path.join(PARENT_DIR, 'data/faq_data.csv')
+    if context_data_file is None:
+        context_data_file = path.join(PARENT_DIR, 'data/context_data.csv')
+    if faq_data_file is None:
+        faq_data_file = path.join(PARENT_DIR, 'data/faq_data.csv')
 
     run_shell_installs()
     qa_models = load_qa_models()
@@ -180,5 +184,6 @@ def dialog_system():
         try:
             question_response(data=data, qa_models=qa_models)
         except (KeyboardInterrupt, EOFError, SystemExit):
-            logging.info('Goodbye!')
+            logging.debug('Goodbye!')
             return 'Goodbye!'
+
