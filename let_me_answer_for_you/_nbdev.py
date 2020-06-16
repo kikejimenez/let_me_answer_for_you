@@ -3,11 +3,10 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"run_shell_installs": "01_dialog_system.ipynb",
+         "action_over_list_f": "01_dialog_system.ipynb",
          "replacement_f": "01_dialog_system.ipynb",
-         "gen_faq_config_file": "01_dialog_system.ipynb",
-         "load_qa_models": "01_dialog_system.ipynb",
-         "select_squad_responses": "01_dialog_system.ipynb",
          "select_faq_responses": "01_dialog_system.ipynb",
+         "load_qa_models": "01_dialog_system.ipynb",
          "format_responses": "01_dialog_system.ipynb",
          "get_responses": "01_dialog_system.ipynb",
          "get_input": "01_dialog_system.ipynb",
