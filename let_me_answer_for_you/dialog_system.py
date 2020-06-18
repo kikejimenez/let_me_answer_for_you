@@ -17,9 +17,9 @@ from pathlib import Path
 import logging
 from collections import defaultdict
 
-logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', level=logging.DEBUG, datefmt='%I:%M:%S')
+logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', level=logging.ERROR, datefmt='%I:%M:%S')
 logging.info("Hello! Welcome to our automated dialog system!")
-logging.debug("test: for Debug?")
+logging.debug(" Debug Mode Activa")
 logging.error(' Error Log Active ')
 
 # Cell
@@ -154,7 +154,7 @@ def get_input(text):
 
 def new_answer(question, data, qa_models):
 
-    if get_input('Give a better anwser [y/n]?')[0].lower() != 'y':
+    if get_input('Give a better answer [y/n]?')[0].lower() != 'y':
         return 'no data updates..'
 
     if get_input('Give the answer as a context [y/n]?')[0].lower() == 'y':
@@ -165,7 +165,7 @@ def new_answer(question, data, qa_models):
             }
         )
         data['context']['df'] = data['context']['df'].append(new_context)
-        data['context']['df'].to_csv(data['context']['path'])
+        data['context']['df'].to_csv(data['context']['path'], index=False)
 
         return 'contexts dataset updated..'
     else:
@@ -176,7 +176,7 @@ def new_answer(question, data, qa_models):
             }
         )
         data['faq']['df'] = data['faq']['df'].append(new_faq)
-        data['faq']['df'].to_csv(data['faq']['path'])
+        data['faq']['df'].to_csv(data['faq']['path'], index=False)
         qa_models['faq']['tfidf'] = train_model(
             data['faq']['config'], download=False
         )
@@ -189,6 +189,8 @@ def question_response(data, qa_models, num_returned_values_per_squad_model=1):
     _, formatted_responses = get_responses(
         data['context']['df'], question, qa_models, nb_squad_results=2
     )
+
+    print(formatted_responses)
 
     return formatted_responses, new_answer(question, data, qa_models)
 
@@ -242,7 +244,7 @@ def set_data_dict(file, data, question_type, data_dir):
 
 def load_and_prepare_data(context_data_file, faq_data_file, data, configs_faq):
 
-    PARENT_DIR = popen('dirname $PWD').read().strip()
+    PARENT_DIR = popen('$PWD').read().strip()
 
     if faq_data_file or context_data_file is None:
         DATA_DIR = path.join(PARENT_DIR, 'data')
@@ -281,7 +283,6 @@ def dialog_system(context_data_file=None, faq_data_file=None, configs_faq=None):
      Main Dialog System
     '''
     run_shell_installs()
-    qa_models = load_qa_models()
 
     data = {'context': defaultdict(str), 'faq': defaultdict(str)}
 
@@ -292,9 +293,11 @@ def dialog_system(context_data_file=None, faq_data_file=None, configs_faq=None):
         data=data
     )
 
+    qa_models = load_qa_models(config_tfidf=data['faq']['config'])
+
     while True:
         try:
-            question_response(data=data, qa_models=qa_models)
+            responses, _ = question_response(data=data, qa_models=qa_models)
         except (KeyboardInterrupt, EOFError, SystemExit):
             logging.debug('Goodbye!')
             return 'Goodbye!'
