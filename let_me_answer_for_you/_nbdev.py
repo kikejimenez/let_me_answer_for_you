@@ -20,8 +20,7 @@ index = {"change_log_config": "01_settings.ipynb",
          "set_minimal_contexts": "01_settings.ipynb",
          "set_data_dict": "01_settings.ipynb",
          "load_and_prepare_data": "01_settings.ipynb",
-         "DialogSystem": "02_dialog_system.ipynb",
-         "dialog_system": "02_dialog_system.ipynb"}
+         "DialogSystem": "02_dialog_system.ipynb"}
 
 modules = ["settings.py",
            "dialog_system.py"]

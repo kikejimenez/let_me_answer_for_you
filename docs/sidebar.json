@@ -1,6 +1,7 @@
 {
   "let_me_answer_for_you": {
     "Overview": "/",
-    "Dialog System": "/dialog_system"
+    "Dialog System": "/settings",
+    "Title": "/dialog_system"
   }
 }

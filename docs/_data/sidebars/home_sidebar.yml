@@ -11,6 +11,9 @@ entries:
       url: /
     - output: web,pdf
       title: Dialog System
+      url: /settings
+    - output: web,pdf
+      title: Title
       url: /dialog_system
     output: web
     title: let_me_answer_for_you
