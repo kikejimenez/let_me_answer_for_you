@@ -39,7 +39,6 @@ def change_log_config():
 
     settings_json['loggers']['uvicorn.error']['level'] ='ERROR'
     settings_json['loggers']['uvicorn.error']['propagate'] = True
-    #logging.debug('{logs_key}:{settings_json[logs_key]}')
 
     #settings_json[logs_key] = False
 
@@ -153,7 +152,7 @@ def load_qa_models(
 def format_responses(question, responses):
     formatted_response = f'{question}:\n\n'
     for k, res in enumerate(responses):
-        formatted_response += f'{k}: {res}\n'
+        formatted_response += f'{k+1}: {res}\n'
     return formatted_response
 
 
@@ -181,7 +180,7 @@ def question_response(data, qa_models, num_returned_values_per_squad_model=1):
     question = get_input('Introduce question:\n')
 
     _, formatted_responses = get_responses(
-        data['context']['df'], question, qa_models, nb_squad_results=2
+        data['context']['df'], question, qa_models, nb_squad_results=1
     )
 
     return question, formatted_responses
@@ -190,8 +189,6 @@ def question_response(data, qa_models, num_returned_values_per_squad_model=1):
 def new_question_answer(data, qa_models):
 
     question = get_input('Introduce question:\n')
-
-    #if get_input('Give the answer as a context [y/n]?')[0].lower() == 'y':
 
     new_faq = pd.DataFrame(
         {

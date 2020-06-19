@@ -17,37 +17,49 @@ logging.basicConfig(
 logging.debug(" Debug Log Active")
 logging.info("Hello! Welcome to our automated dialog system!")
 logging.warning(' Warning Log Active')
-logging.error(' Error Log Active ')
+#logging.error(' Error Log Active ')
 
 # Cell
 class DialogSystem:
     def __init__(
-        self, context_data_file=None, faq_data_file=None, configs_faq=None
+        self,
+        context_data_file=None,
+        faq_data_file=None,
+        configs_faq=None,
+        download_models=True
     ):
         run_shell_installs()
         self.data = {'context': defaultdict(str), 'faq': defaultdict(str)}
-
+        self.download = download_models
         load_and_prepare_data(
             context_data_file=context_data_file,
             faq_data_file=faq_data_file,
             configs_faq=configs_faq,
             data=self.data
         )
-        self.qa_models = load_qa_models(config_tfidf=self.data['faq']['config'])
+        self.qa_models = load_qa_models(
+            config_tfidf=self.data['faq']['config'], download=self.download
+        )
 
     def question_answer(self):
+        ''' Gets answer from a question
+        '''
         question, responses = question_response(
             data=self.data,
             qa_models=self.qa_models,
             num_returned_values_per_squad_model=1
         )
-        print('\n\n'+responses)
+        print('\n\n' + responses)
 
-    def new_answer(self):
-        ...
+    def new_q_a(self):
+        '''Stores new question answer
+        '''
+        new_question_answer(self.data, self.qa_models)
 
     def new_context(self):
-        ...
+        '''Stores a new context
+        '''
+        new_context(self.data)
 
 # Cell
 def dialog_system(context_data_file=None, faq_data_file=None, configs_faq=None):
