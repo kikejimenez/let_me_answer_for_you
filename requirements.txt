@@ -1,3 +1,4 @@
 nbdev
 deeppavlov
-tensorflow==1.15.3
+twine
+let_me_answer_for_you
