@@ -10,7 +10,7 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Dialog System
+      title: Settings and Configuration
       url: /settings
     - output: web,pdf
       title: Dialog System Class
