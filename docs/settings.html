@@ -54,6 +54,7 @@ description: "Question Answering Automated Dialog System"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="change_log_config" class="doc_header"><code>change_log_config</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>change_log_config</code>()</p>
 </blockquote>
+<p>Change Deeppavlov configuration files to ERROR mode</p>
 
 </div>
 
@@ -76,7 +77,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_shell_installs" class="doc_header"><code>run_shell_installs</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_shell_installs</code>()</p>
+<h4 id="run_shell_installs" class="doc_header"><code>run_shell_installs</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_shell_installs</code>()</p>
 </blockquote>
 <p>Run install commands</p>
 
@@ -93,23 +94,6 @@ description: "Question Answering Automated Dialog System"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_shell_installs</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -125,8 +109,10 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="action_over_list_f" class="doc_header"><code>action_over_list_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>action_over_list_f</code>(<strong><code>arr</code></strong>, <strong><code>v</code></strong>)</p>
+<h4 id="action_over_list_f" class="doc_header"><code>action_over_list_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>action_over_list_f</code>(<strong><code>arr</code></strong>, <strong><code>v</code></strong>)</p>
 </blockquote>
+<p>v[0] and v[1] are dictionaries
+arr is array of dictionaries</p>
 
 </div>
 
@@ -149,7 +135,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="replacement_f" class="doc_header"><code>replacement_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replacement_f</code>(<strong><code>model_config</code></strong>, <strong>**<code>args</code></strong>)</p>
+<h4 id="replacement_f" class="doc_header"><code>replacement_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L84" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replacement_f</code>(<strong><code>model_config</code></strong>, <strong>**<code>args</code></strong>)</p>
 </blockquote>
 <p>Replaces the model config dictionary with new values</p>
 
@@ -175,6 +161,8 @@ description: "Question Answering Automated Dialog System"
 
 
 <span class="k">def</span> <span class="nf">gen_list_keys_for_tests</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;This is functio is used for tests</span>
+<span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">str_n</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="si">:</span><span class="s1">1</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="n">gen_dict_list</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="p">{</span>
@@ -204,6 +192,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <span class="k">def</span> <span class="nf">test_action_over_list_f</span><span class="p">():</span>
+
 
     <span class="n">pipe_list</span><span class="p">,</span> <span class="n">rand_id</span><span class="p">,</span> <span class="n">rand_key</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">new_rand_val</span> <span class="o">=</span> <span class="n">gen_list_keys_for_tests</span><span class="p">()</span>
 
@@ -286,7 +275,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="updates_faq_config_file" class="doc_header"><code>updates_faq_config_file</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L91" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>updates_faq_config_file</code>(<strong><code>configs_path</code></strong>, <strong>**<code>args</code></strong>)</p>
+<h4 id="updates_faq_config_file" class="doc_header"><code>updates_faq_config_file</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>updates_faq_config_file</code>(<strong><code>configs_path</code></strong>, <strong>**<code>args</code></strong>)</p>
 </blockquote>
 <p>Updates deepplavov json config file</p>
 
@@ -411,7 +400,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="select_faq_responses" class="doc_header"><code>select_faq_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L108" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>select_faq_responses</code>(<strong><code>faq_model</code></strong>, <strong><code>question</code></strong>)</p>
+<h4 id="select_faq_responses" class="doc_header"><code>select_faq_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L113" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>select_faq_responses</code>(<strong><code>faq_model</code></strong>, <strong><code>question</code></strong>)</p>
 </blockquote>
 <p>Calls Deeppavlov FAQ model</p>
 
@@ -559,23 +548,25 @@ description: "Question Answering Automated Dialog System"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 39.2MB/s]
-[nltk_data] Downloading package punkt to /home/jovyan/nltk_data...
-[nltk_data]   Package punkt is already up-to-date!
-[nltk_data] Downloading package stopwords to /home/jovyan/nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
-[nltk_data] Downloading package perluniprops to
-[nltk_data]     /home/jovyan/nltk_data...
-[nltk_data]   Package perluniprops is already up-to-date!
-[nltk_data] Downloading package nonbreaking_prefixes to
-[nltk_data]     /home/jovyan/nltk_data...
-[nltk_data]   Package nonbreaking_prefixes is already up-to-date!
+<pre>09:09:15 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:15 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
+09:09:15 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:16 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
+100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 6.87MB/s]
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 22.2MB/s]
+09:09:17 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:18 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
+09:09:18 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:18 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
+100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 5.89MB/s]
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 13.6MB/s]
+09:09:21 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:21 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
+09:09:21 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:22 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
+100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 12.7MB/s]
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
 </pre>
@@ -606,7 +597,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="select_squad_responses" class="doc_header"><code>select_squad_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>select_squad_responses</code>(<strong><code>contexts</code></strong>, <strong><code>squad_model</code></strong>, <strong><code>question</code></strong>, <strong><code>best_results</code></strong>=<em><code>1</code></em>)</p>
+<h4 id="select_squad_responses" class="doc_header"><code>select_squad_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>select_squad_responses</code>(<strong><code>contexts</code></strong>, <strong><code>squad_model</code></strong>, <strong><code>question</code></strong>, <strong><code>best_results</code></strong>=<em><code>1</code></em>)</p>
 </blockquote>
 <p>Calls Deeppavlov BERT and RNET Context Question Answering</p>
 
@@ -723,6 +714,45 @@ description: "Question Answering Automated Dialog System"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>09:09:27 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:28 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/bert/cased_L-12_H-768_A-12.zip.md5 HTTP/1.1&#34; 200 386
+09:09:29 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:29 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/squad_bert.tar.gz.md5 HTTP/1.1&#34; 200 184
+09:09:46 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+09:09:47 DEBUG:Responses: []
+09:09:47 DEBUG:Top Responses: []
+09:09:49 DEBUG:Responses: [list([[&#39;Elon Musk&#39;], [203], [50257280.0]])]
+09:09:49 DEBUG:Top Responses: [&#39;Elon Musk&#39;]
+09:09:50 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [6978.86279296875]])
+ list([[&#39;north of mexico&#39;], [22], [81567.328125]])]
+09:09:50 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:09:50 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:51 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /embeddings/wiki-news-300d-1M-char.vec.md5 HTTP/1.1&#34; 200 61
+09:09:51 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:51 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /embeddings/wiki-news-300d-1M.vec.md5 HTTP/1.1&#34; 200 56
+09:09:55 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:09:56 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/squad_model_1.4_cpu_compatible.tar.gz.md5 HTTP/1.1&#34; 200 389
+09:10:15 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:10:16 DEBUG:Responses: []
+09:10:16 DEBUG:Top Responses: []
+09:10:18 DEBUG:Responses: [list([[&#39;Elon Musk&#39;], [203], [36056324.0]])]
+09:10:18 DEBUG:Top Responses: [&#39;Elon Musk&#39;]
+09:10:18 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [564.4996948242188]])
+ list([[&#39;north of mexico&#39;], [22], [138151.90625]])]
+09:10:18 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -744,8 +774,9 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_qa_models" class="doc_header"><code>load_qa_models</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L133" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_qa_models</code>(<strong><code>config_rnet</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/squad/squad.json')</code></em>, <strong><code>config_bert</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/squad/squad_bert.json')</code></em>, <strong><code>config_tfidf</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/faq/tfidf_logreg_en_faq.json')</code></em>, <strong><code>download</code></strong>=<em><code>True</code></em>)</p>
+<h4 id="load_qa_models" class="doc_header"><code>load_qa_models</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_qa_models</code>(<strong><code>config_rnet</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/squad/squad.json')</code></em>, <strong><code>config_bert</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/squad/squad_bert.json')</code></em>, <strong><code>config_tfidf</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/faq/tfidf_logreg_en_faq.json')</code></em>, <strong><code>download</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
+<p>Load the squad and faq models</p>
 
 </div>
 
@@ -768,8 +799,9 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="format_responses" class="doc_header"><code>format_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L152" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>format_responses</code>(<strong><code>question</code></strong>, <strong><code>responses</code></strong>)</p>
+<h4 id="format_responses" class="doc_header"><code>format_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>format_responses</code>(<strong><code>question</code></strong>, <strong><code>responses</code></strong>)</p>
 </blockquote>
+<p>Format question-response pair</p>
 
 </div>
 
@@ -792,8 +824,9 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_responses" class="doc_header"><code>get_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_responses</code>(<strong><code>contexts</code></strong>, <strong><code>question</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>nb_squad_results</code></strong>=<em><code>1</code></em>)</p>
+<h4 id="get_responses" class="doc_header"><code>get_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_responses</code>(<strong><code>contexts</code></strong>, <strong><code>question</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>nb_squad_results</code></strong>=<em><code>1</code></em>)</p>
 </blockquote>
+<p>Get response from a quesiton using qa_models and contexts</p>
 
 </div>
 
@@ -911,10 +944,36 @@ description: "Question Answering Automated Dialog System"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
-  FutureWarning)
+<pre>09:10:40 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:10:59 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
+09:11:04 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [120.95974731445312]])
+ list([[&#39;north of mexico&#39;], [22], [174602.40625]])]
+09:11:04 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:11:07 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [22507.34375]])
+ list([[&#39;north of mexico&#39;], [22], [269778.3125]])]
+09:11:07 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:11:07 DEBUG:[&#39;north of mexico&#39;, &#39;TJ&#39;, &#39;north of mexico&#39;, &#39;TJ&#39;, &#39;Yes it is!&#39;]
+09:11:07 DEBUG:Where is Intekglobal?:
+
+1: north of mexico
+2: TJ
+3: Yes it is!
+
+09:11:30 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:11:59 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+09:12:06 DEBUG:Responses: []
+09:12:06 DEBUG:Top Responses: []
+09:12:06 DEBUG:Responses: []
+09:12:06 DEBUG:Top Responses: []
+09:12:06 DEBUG:[&#39;Two&#39;]
+09:12:06 DEBUG:What is the minimun number of FAQ questions:
+
+1: Two
+
 </pre>
 </div>
 </div>
@@ -943,7 +1002,7 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_input" class="doc_header"><code>get_input</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L174" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_input</code>(<strong><code>text</code></strong>)</p>
+<h4 id="get_input" class="doc_header"><code>get_input</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L185" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_input</code>(<strong><code>text</code></strong>)</p>
 </blockquote>
 <p>This redundancy is needed for testing</p>
 
@@ -968,8 +1027,9 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="question_response" class="doc_header"><code>question_response</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L179" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>question_response</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>num_returned_values_per_squad_model</code></strong>=<em><code>1</code></em>)</p>
+<h4 id="question_response" class="doc_header"><code>question_response</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L190" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>question_response</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>num_returned_values_per_squad_model</code></strong>=<em><code>1</code></em>)</p>
 </blockquote>
+<p>Receive response and call get_response()</p>
 
 </div>
 
@@ -1081,8 +1141,26 @@ description: "Question Answering Automated Dialog System"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+<pre>09:12:37 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:13:10 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
+09:13:20 DEBUG:Responses: [list([[&#39;Intekglobal&#39;], [0], [160.03579711914062]])
+ list([[&#39;Intekglobal&#39;], [3], [244.86245727539062]])
+ list([[&#39;one of the smartest minds on the planet&#39;], [19], [1664652.0]])]
+09:13:20 DEBUG:Top Responses: [&#39;one of the smartest minds on the planet&#39;]
+09:13:24 DEBUG:Responses: [list([[&#39;&#39;], [-1], [0.0011892060283571482]])
+ list([[&#39;&#39;], [-1], [0.01691678911447525]])
+ list([[&#39;one of the smartest minds on the planet, \n                   he currently works as Intekglobal employee&#39;], [19], [18812.87109375]])]
+09:13:24 DEBUG:Top Responses: [&#39;one of the smartest minds on the planet, \n                   he currently works as Intekglobal employee&#39;]
+09:13:24 DEBUG:  Who is Enrique Jimenez?
+09:13:24 DEBUG:  Who is Enrique Jimenez?:
+
+1: one of the smartest minds on the planet, 
+                   he currently works as Intekglobal employee
+2: one of the smartest minds on the planet
+3: yes
+
 </pre>
 </div>
 </div>
@@ -1111,8 +1189,10 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="new_question_answer" class="doc_header"><code>new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L189" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_question_answer</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>)</p>
+<h4 id="new_question_answer" class="doc_header"><code>new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L202" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_question_answer</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>)</p>
 </blockquote>
+<p>Asks for a new question-answer pair; store the result in the
+faq dataframe and retrain the faq-model</p>
 
 </div>
 
@@ -1173,316 +1253,17 @@ description: "Question Answering Automated Dialog System"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-24-075ed7dfea65&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     29</span> 
-<span class="ansi-green-intense-fg ansi-bold">     30</span> 
-<span class="ansi-green-fg">---&gt; 31</span><span class="ansi-red-fg"> </span>test_new_question_answer<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/unittest/mock.py</span> in <span class="ansi-cyan-fg">patched</span><span class="ansi-blue-fg">(*args, **keywargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1253</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1254</span>                 args <span class="ansi-blue-fg">+=</span> tuple<span class="ansi-blue-fg">(</span>extra_args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1255</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>keywargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1256</span>             <span class="ansi-green-fg">except</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1257</span>                 if (patching not in entered_patchers and
-
-<span class="ansi-green-fg">&lt;ipython-input-24-075ed7dfea65&gt;</span> in <span class="ansi-cyan-fg">test_new_question_answer</span><span class="ansi-blue-fg">(mock_input)</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span>         mock_faq_files<span class="ansi-blue-fg">(</span>tmpdirname<span class="ansi-blue-fg">,</span> faqs<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;faq&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     22</span>         qa_models = load_qa_models(
-<span class="ansi-green-fg">---&gt; 23</span><span class="ansi-red-fg">             </span>config_tfidf<span class="ansi-blue-fg">=</span>data<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;faq&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;config&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">,</span> download<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">     24</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     25</span>         new_question_answer<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">,</span> qa_models<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-18-b11d69a61bed&gt;</span> in <span class="ansi-cyan-fg">load_qa_models</span><span class="ansi-blue-fg">(config_rnet, config_bert, config_tfidf, download)</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>         <span class="ansi-blue-fg">&#39;squad&#39;</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>             {
-<span class="ansi-green-fg">---&gt; 11</span><span class="ansi-red-fg">                 </span><span class="ansi-blue-fg">&#39;rnet&#39;</span><span class="ansi-blue-fg">:</span> build_model<span class="ansi-blue-fg">(</span>config_rnet<span class="ansi-blue-fg">,</span> download<span class="ansi-blue-fg">=</span>download<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span>                 <span class="ansi-blue-fg">&#39;bert&#39;</span><span class="ansi-blue-fg">:</span> build_model<span class="ansi-blue-fg">(</span>config_bert<span class="ansi-blue-fg">,</span> download<span class="ansi-blue-fg">=</span>download<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span>             },
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/core/commands/infer.py</span> in <span class="ansi-cyan-fg">build_model</span><span class="ansi-blue-fg">(config, mode, load_trained, download, serialized)</span>
-<span class="ansi-green-intense-fg ansi-bold">     60</span>             component_serialized <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-intense-fg ansi-bold">     61</span> 
-<span class="ansi-green-fg">---&gt; 62</span><span class="ansi-red-fg">         </span>component <span class="ansi-blue-fg">=</span> from_params<span class="ansi-blue-fg">(</span>component_config<span class="ansi-blue-fg">,</span> mode<span class="ansi-blue-fg">=</span>mode<span class="ansi-blue-fg">,</span> serialized<span class="ansi-blue-fg">=</span>component_serialized<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     63</span> 
-<span class="ansi-green-intense-fg ansi-bold">     64</span>         <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#39;id&#39;</span> <span class="ansi-green-fg">in</span> component_config<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/core/common/params.py</span> in <span class="ansi-cyan-fg">from_params</span><span class="ansi-blue-fg">(params, mode, serialized, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    104</span>                 kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;mode&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> mode
-<span class="ansi-green-intense-fg ansi-bold">    105</span> 
-<span class="ansi-green-fg">--&gt; 106</span><span class="ansi-red-fg">             </span>component <span class="ansi-blue-fg">=</span> obj<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>dict<span class="ansi-blue-fg">(</span>config_params<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    107</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    108</span>                 _refs<span class="ansi-blue-fg">[</span>config_params<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;id&#39;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> component
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_backend.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span>                     wrapped_attr <span class="ansi-blue-fg">=</span> _graph_wrap<span class="ansi-blue-fg">(</span>attr<span class="ansi-blue-fg">,</span> obj<span class="ansi-blue-fg">.</span>graph<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     75</span>                 setattr<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">,</span> meth<span class="ansi-blue-fg">,</span> wrapped_attr<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 76</span><span class="ansi-red-fg">         </span>obj<span class="ansi-blue-fg">.</span>__init__<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     77</span>         <span class="ansi-green-fg">return</span> obj
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_backend.py</span> in <span class="ansi-cyan-fg">_wrapped</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span>     <span class="ansi-green-fg">def</span> _wrapped<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span>         <span class="ansi-green-fg">with</span> graph<span class="ansi-blue-fg">.</span>as_default<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 28</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     29</span> 
-<span class="ansi-green-intense-fg ansi-bold">     30</span>     <span class="ansi-green-fg">return</span> _wrapped
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/models/squad/squad.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, word_emb, char_emb, context_limit, question_limit, char_limit, train_char_emb, char_hidden_size, encoder_hidden_size, attention_hidden_size, keep_prob, min_learning_rate, noans_token, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     87</span>         self<span class="ansi-blue-fg">.</span>sess <span class="ansi-blue-fg">=</span> tf<span class="ansi-blue-fg">.</span>Session<span class="ansi-blue-fg">(</span>config<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>sess_config<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     88</span> 
-<span class="ansi-green-fg">---&gt; 89</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_init_graph<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     90</span> 
-<span class="ansi-green-intense-fg ansi-bold">     91</span>         self<span class="ansi-blue-fg">.</span>_init_optimizer<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_backend.py</span> in <span class="ansi-cyan-fg">_wrapped</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span>     <span class="ansi-green-fg">def</span> _wrapped<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span>         <span class="ansi-green-fg">with</span> graph<span class="ansi-blue-fg">.</span>as_default<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 28</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     29</span> 
-<span class="ansi-green-intense-fg ansi-bold">     30</span>     <span class="ansi-green-fg">return</span> _wrapped
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/models/squad/squad.py</span> in <span class="ansi-cyan-fg">_init_graph</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    175</span>         <span class="ansi-green-fg">with</span> tf<span class="ansi-blue-fg">.</span>variable_scope<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;attention&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    176</span>             qc_att = dot_attention(c, q, mask=self.q_mask, att_size=self.attention_hidden_size,
-<span class="ansi-green-fg">--&gt; 177</span><span class="ansi-red-fg">                                    keep_prob=self.keep_prob_ph)
-</span><span class="ansi-green-intense-fg ansi-bold">    178</span>             rnn = self.GRU(num_layers=1, num_units=self.hidden_size, batch_size=bs,
-<span class="ansi-green-intense-fg ansi-bold">    179</span>                            input_size=qc_att.get_shape().as_list()[-1], keep_prob=self.keep_prob_ph)
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/deeppavlov/models/squad/utils.py</span> in <span class="ansi-cyan-fg">dot_attention</span><span class="ansi-blue-fg">(inputs, memory, mask, att_size, keep_prob, scope)</span>
-<span class="ansi-green-intense-fg ansi-bold">    180</span>             dim <span class="ansi-blue-fg">=</span> res<span class="ansi-blue-fg">.</span>get_shape<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>as_list<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">    181</span>             d_res <span class="ansi-blue-fg">=</span> tf<span class="ansi-blue-fg">.</span>nn<span class="ansi-blue-fg">.</span>dropout<span class="ansi-blue-fg">(</span>res<span class="ansi-blue-fg">,</span> keep_prob<span class="ansi-blue-fg">=</span>keep_prob<span class="ansi-blue-fg">,</span> noise_shape<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">[</span>BS<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> IH <span class="ansi-blue-fg">+</span> MH<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 182</span><span class="ansi-red-fg">             </span>gate <span class="ansi-blue-fg">=</span> tf<span class="ansi-blue-fg">.</span>layers<span class="ansi-blue-fg">.</span>dense<span class="ansi-blue-fg">(</span>d_res<span class="ansi-blue-fg">,</span> dim<span class="ansi-blue-fg">,</span> use_bias<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">,</span> activation<span class="ansi-blue-fg">=</span>tf<span class="ansi-blue-fg">.</span>nn<span class="ansi-blue-fg">.</span>sigmoid<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    183</span>             <span class="ansi-green-fg">return</span> res <span class="ansi-blue-fg">*</span> gate
-<span class="ansi-green-intense-fg ansi-bold">    184</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/util/deprecation.py</span> in <span class="ansi-cyan-fg">new_func</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    322</span>               <span class="ansi-blue-fg">&#39;in a future version&#39;</span> <span class="ansi-green-fg">if</span> date <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;after %s&#39;</span> <span class="ansi-blue-fg">%</span> date<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    323</span>               instructions)
-<span class="ansi-green-fg">--&gt; 324</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    325</span>     return tf_decorator.make_decorator(
-<span class="ansi-green-intense-fg ansi-bold">    326</span>         func<span class="ansi-blue-fg">,</span> new_func<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;deprecated&#39;</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/layers/core.py</span> in <span class="ansi-cyan-fg">dense</span><span class="ansi-blue-fg">(inputs, units, activation, use_bias, kernel_initializer, bias_initializer, kernel_regularizer, bias_regularizer, activity_regularizer, kernel_constraint, bias_constraint, trainable, name, reuse)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>                 _scope<span class="ansi-blue-fg">=</span>name<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    186</span>                 _reuse=reuse)
-<span class="ansi-green-fg">--&gt; 187</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">return</span> layer<span class="ansi-blue-fg">.</span>apply<span class="ansi-blue-fg">(</span>inputs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span> 
-<span class="ansi-green-intense-fg ansi-bold">    189</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/util/deprecation.py</span> in <span class="ansi-cyan-fg">new_func</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    322</span>               <span class="ansi-blue-fg">&#39;in a future version&#39;</span> <span class="ansi-green-fg">if</span> date <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;after %s&#39;</span> <span class="ansi-blue-fg">%</span> date<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    323</span>               instructions)
-<span class="ansi-green-fg">--&gt; 324</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    325</span>     return tf_decorator.make_decorator(
-<span class="ansi-green-intense-fg ansi-bold">    326</span>         func<span class="ansi-blue-fg">,</span> new_func<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;deprecated&#39;</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/keras/engine/base_layer.py</span> in <span class="ansi-cyan-fg">apply</span><span class="ansi-blue-fg">(self, inputs, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1698</span>       Output tensor<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>
-<span class="ansi-green-intense-fg ansi-bold">   1699</span>     &#34;&#34;&#34;
-<span class="ansi-green-fg">-&gt; 1700</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>__call__<span class="ansi-blue-fg">(</span>inputs<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1701</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1702</span>   @deprecation.deprecated(
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/layers/base.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, inputs, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    546</span> 
-<span class="ansi-green-intense-fg ansi-bold">    547</span>       <span class="ansi-red-fg"># Actually call layer</span>
-<span class="ansi-green-fg">--&gt; 548</span><span class="ansi-red-fg">       </span>outputs <span class="ansi-blue-fg">=</span> super<span class="ansi-blue-fg">(</span>Layer<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>__call__<span class="ansi-blue-fg">(</span>inputs<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    549</span> 
-<span class="ansi-green-intense-fg ansi-bold">    550</span>     <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> context<span class="ansi-blue-fg">.</span>executing_eagerly<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/keras/engine/base_layer.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, inputs, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    822</span>           <span class="ansi-red-fg"># Build layer if applicable (if the `build` method has been</span>
-<span class="ansi-green-intense-fg ansi-bold">    823</span>           <span class="ansi-red-fg"># overridden).</span>
-<span class="ansi-green-fg">--&gt; 824</span><span class="ansi-red-fg">           </span>self<span class="ansi-blue-fg">.</span>_maybe_build<span class="ansi-blue-fg">(</span>inputs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    825</span>           cast_inputs <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_maybe_cast_inputs<span class="ansi-blue-fg">(</span>inputs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    826</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/keras/engine/base_layer.py</span> in <span class="ansi-cyan-fg">_maybe_build</span><span class="ansi-blue-fg">(self, inputs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2144</span>         <span class="ansi-red-fg"># operations.</span>
-<span class="ansi-green-intense-fg ansi-bold">   2145</span>         <span class="ansi-green-fg">with</span> tf_utils<span class="ansi-blue-fg">.</span>maybe_init_scope<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 2146</span><span class="ansi-red-fg">           </span>self<span class="ansi-blue-fg">.</span>build<span class="ansi-blue-fg">(</span>input_shapes<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2147</span>       <span class="ansi-red-fg"># We must set self.built since user defined build functions are not</span>
-<span class="ansi-green-intense-fg ansi-bold">   2148</span>       <span class="ansi-red-fg"># constrained to set self.built.</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/keras/layers/core.py</span> in <span class="ansi-cyan-fg">build</span><span class="ansi-blue-fg">(self, input_shape)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1019</span>         constraint<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>kernel_constraint<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1020</span>         dtype<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>dtype<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1021</span><span class="ansi-red-fg">         trainable=True)
-</span><span class="ansi-green-intense-fg ansi-bold">   1022</span>     <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>use_bias<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1023</span>       self.bias = self.add_weight(
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/layers/base.py</span> in <span class="ansi-cyan-fg">add_weight</span><span class="ansi-blue-fg">(self, name, shape, dtype, initializer, regularizer, trainable, constraint, use_resource, synchronization, aggregation, partitioner, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    459</span>             aggregation<span class="ansi-blue-fg">=</span>aggregation<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    460</span>             getter<span class="ansi-blue-fg">=</span>vs<span class="ansi-blue-fg">.</span>get_variable<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 461</span><span class="ansi-red-fg">             **kwargs)
-</span><span class="ansi-green-intense-fg ansi-bold">    462</span> 
-<span class="ansi-green-intense-fg ansi-bold">    463</span>         <span class="ansi-green-fg">if</span> regularizer<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/keras/engine/base_layer.py</span> in <span class="ansi-cyan-fg">add_weight</span><span class="ansi-blue-fg">(self, name, shape, dtype, initializer, regularizer, trainable, constraint, partitioner, use_resource, synchronization, aggregation, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    527</span>         collections<span class="ansi-blue-fg">=</span>collections_arg<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    528</span>         synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 529</span><span class="ansi-red-fg">         aggregation=aggregation)
-</span><span class="ansi-green-intense-fg ansi-bold">    530</span>     backend<span class="ansi-blue-fg">.</span>track_variable<span class="ansi-blue-fg">(</span>variable<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/training/tracking/base.py</span> in <span class="ansi-cyan-fg">_add_variable_with_custom_getter</span><span class="ansi-blue-fg">(self, name, shape, dtype, initializer, getter, overwrite, **kwargs_for_getter)</span>
-<span class="ansi-green-intense-fg ansi-bold">    710</span>         dtype<span class="ansi-blue-fg">=</span>dtype<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    711</span>         initializer<span class="ansi-blue-fg">=</span>initializer<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 712</span><span class="ansi-red-fg">         **kwargs_for_getter)
-</span><span class="ansi-green-intense-fg ansi-bold">    713</span> 
-<span class="ansi-green-intense-fg ansi-bold">    714</span>     <span class="ansi-red-fg"># If we set an initializer and the variable processed it, tracking will not</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">get_variable</span><span class="ansi-blue-fg">(name, shape, dtype, initializer, regularizer, trainable, collections, caching_device, partitioner, validate_shape, use_resource, custom_getter, constraint, synchronization, aggregation)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1498</span>       constraint<span class="ansi-blue-fg">=</span>constraint<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1499</span>       synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1500</span><span class="ansi-red-fg">       aggregation=aggregation)
-</span><span class="ansi-green-intense-fg ansi-bold">   1501</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1502</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">get_variable</span><span class="ansi-blue-fg">(self, var_store, name, shape, dtype, initializer, regularizer, reuse, trainable, collections, caching_device, partitioner, validate_shape, use_resource, custom_getter, constraint, synchronization, aggregation)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1241</span>           constraint<span class="ansi-blue-fg">=</span>constraint<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1242</span>           synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1243</span><span class="ansi-red-fg">           aggregation=aggregation)
-</span><span class="ansi-green-intense-fg ansi-bold">   1244</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1245</span>   def _get_partitioned_variable(self,
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">get_variable</span><span class="ansi-blue-fg">(self, name, shape, dtype, initializer, regularizer, reuse, trainable, collections, caching_device, partitioner, validate_shape, use_resource, custom_getter, constraint, synchronization, aggregation)</span>
-<span class="ansi-green-intense-fg ansi-bold">    565</span>           constraint<span class="ansi-blue-fg">=</span>constraint<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    566</span>           synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 567</span><span class="ansi-red-fg">           aggregation=aggregation)
-</span><span class="ansi-green-intense-fg ansi-bold">    568</span> 
-<span class="ansi-green-intense-fg ansi-bold">    569</span>   def _get_partitioned_variable(self,
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">_true_getter</span><span class="ansi-blue-fg">(name, shape, dtype, initializer, regularizer, reuse, trainable, collections, caching_device, partitioner, validate_shape, use_resource, constraint, synchronization, aggregation)</span>
-<span class="ansi-green-intense-fg ansi-bold">    517</span>           constraint<span class="ansi-blue-fg">=</span>constraint<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    518</span>           synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 519</span><span class="ansi-red-fg">           aggregation=aggregation)
-</span><span class="ansi-green-intense-fg ansi-bold">    520</span> 
-<span class="ansi-green-intense-fg ansi-bold">    521</span>     synchronization, aggregation, trainable = (
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">_get_single_variable</span><span class="ansi-blue-fg">(self, name, shape, dtype, initializer, regularizer, partition_info, reuse, trainable, collections, caching_device, validate_shape, use_resource, constraint, synchronization, aggregation)</span>
-<span class="ansi-green-intense-fg ansi-bold">    931</span>         use_resource<span class="ansi-blue-fg">=</span>use_resource<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    932</span>         synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 933</span><span class="ansi-red-fg">         aggregation=aggregation)
-</span><span class="ansi-green-intense-fg ansi-bold">    934</span>     <span class="ansi-green-fg">if</span> context<span class="ansi-blue-fg">.</span>executing_eagerly<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">and</span> self<span class="ansi-blue-fg">.</span>_store_eager_variables<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    935</span>       <span class="ansi-green-fg">if</span> collections<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variables.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    256</span>   <span class="ansi-green-fg">def</span> __call__<span class="ansi-blue-fg">(</span>cls<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    257</span>     <span class="ansi-green-fg">if</span> cls <span class="ansi-green-fg">is</span> VariableV1<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 258</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> cls<span class="ansi-blue-fg">.</span>_variable_v1_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    259</span>     <span class="ansi-green-fg">elif</span> cls <span class="ansi-green-fg">is</span> Variable<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    260</span>       <span class="ansi-green-fg">return</span> cls<span class="ansi-blue-fg">.</span>_variable_v2_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variables.py</span> in <span class="ansi-cyan-fg">_variable_v1_call</span><span class="ansi-blue-fg">(cls, initial_value, trainable, collections, validate_shape, caching_device, name, variable_def, dtype, expected_shape, import_scope, constraint, use_resource, synchronization, aggregation, shape)</span>
-<span class="ansi-green-intense-fg ansi-bold">    217</span>         synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    218</span>         aggregation<span class="ansi-blue-fg">=</span>aggregation<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 219</span><span class="ansi-red-fg">         shape=shape)
-</span><span class="ansi-green-intense-fg ansi-bold">    220</span> 
-<span class="ansi-green-intense-fg ansi-bold">    221</span>   def _variable_v2_call(cls,
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variables.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">(**kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    195</span>                         shape=None):
-<span class="ansi-green-intense-fg ansi-bold">    196</span>     <span class="ansi-blue-fg">&#34;&#34;&#34;Call on Variable class. Useful to force the signature.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 197</span><span class="ansi-red-fg">     </span>previous_getter <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">lambda</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">:</span> default_variable_creator<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    198</span>     <span class="ansi-green-fg">for</span> _<span class="ansi-blue-fg">,</span> getter <span class="ansi-green-fg">in</span> ops<span class="ansi-blue-fg">.</span>get_default_graph<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>_variable_creator_stack<span class="ansi-blue-fg">:</span>  <span class="ansi-red-fg"># pylint: disable=protected-access</span>
-<span class="ansi-green-intense-fg ansi-bold">    199</span>       previous_getter <span class="ansi-blue-fg">=</span> _make_getter<span class="ansi-blue-fg">(</span>getter<span class="ansi-blue-fg">,</span> previous_getter<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">default_variable_creator</span><span class="ansi-blue-fg">(next_creator, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   2517</span>         synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   2518</span>         aggregation<span class="ansi-blue-fg">=</span>aggregation<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 2519</span><span class="ansi-red-fg">         shape=shape)
-</span><span class="ansi-green-intense-fg ansi-bold">   2520</span> 
-<span class="ansi-green-intense-fg ansi-bold">   2521</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variables.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    260</span>       <span class="ansi-green-fg">return</span> cls<span class="ansi-blue-fg">.</span>_variable_v2_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    261</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 262</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> super<span class="ansi-blue-fg">(</span>VariableMetaclass<span class="ansi-blue-fg">,</span> cls<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>__call__<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    263</span> 
-<span class="ansi-green-intense-fg ansi-bold">    264</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variables.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, initial_value, trainable, collections, validate_shape, caching_device, name, variable_def, dtype, expected_shape, import_scope, constraint, synchronization, aggregation, shape)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1686</span>           synchronization<span class="ansi-blue-fg">=</span>synchronization<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1687</span>           aggregation<span class="ansi-blue-fg">=</span>aggregation<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1688</span><span class="ansi-red-fg">           shape=shape)
-</span><span class="ansi-green-intense-fg ansi-bold">   1689</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1690</span>   <span class="ansi-green-fg">def</span> __repr__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variables.py</span> in <span class="ansi-cyan-fg">_init_from_args</span><span class="ansi-blue-fg">(self, initial_value, trainable, collections, validate_shape, caching_device, name, dtype, expected_shape, constraint, synchronization, aggregation, shape)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1816</span>             <span class="ansi-green-fg">with</span> ops<span class="ansi-blue-fg">.</span>name_scope<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Initializer&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> ops<span class="ansi-blue-fg">.</span>device<span class="ansi-blue-fg">(</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1817</span>               self._initial_value = ops.convert_to_tensor(
-<span class="ansi-green-fg">-&gt; 1818</span><span class="ansi-red-fg">                   initial_value(), name=&#34;initial_value&#34;, dtype=dtype)
-</span><span class="ansi-green-intense-fg ansi-bold">   1819</span>               <span class="ansi-green-fg">if</span> shape <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1820</span>                 shape = (
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/variable_scope.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">    903</span>               shape<span class="ansi-blue-fg">.</span>as_list<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    904</span>               dtype<span class="ansi-blue-fg">=</span>dtype<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 905</span><span class="ansi-red-fg">               partition_info=partition_info)
-</span><span class="ansi-green-intense-fg ansi-bold">    906</span>           variable_dtype <span class="ansi-blue-fg">=</span> dtype<span class="ansi-blue-fg">.</span>base_dtype
-<span class="ansi-green-intense-fg ansi-bold">    907</span>         elif len(tf_inspect.getargspec(initializer).args) == len(
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, shape, dtype, partition_info)</span>
-<span class="ansi-green-intense-fg ansi-bold">    531</span>       limit <span class="ansi-blue-fg">=</span> math<span class="ansi-blue-fg">.</span>sqrt<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3.0</span> <span class="ansi-blue-fg">*</span> scale<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    532</span>       return random_ops.random_uniform(
-<span class="ansi-green-fg">--&gt; 533</span><span class="ansi-red-fg">           shape, -limit, limit, dtype, seed=self.seed)
-</span><span class="ansi-green-intense-fg ansi-bold">    534</span> 
-<span class="ansi-green-intense-fg ansi-bold">    535</span>   <span class="ansi-green-fg">def</span> get_config<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/random_ops.py</span> in <span class="ansi-cyan-fg">random_uniform</span><span class="ansi-blue-fg">(shape, minval, maxval, dtype, seed, name)</span>
-<span class="ansi-green-intense-fg ansi-bold">    236</span>   <span class="ansi-green-fg">with</span> ops<span class="ansi-blue-fg">.</span>name_scope<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;random_uniform&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>shape<span class="ansi-blue-fg">,</span> minval<span class="ansi-blue-fg">,</span> maxval<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> name<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    237</span>     shape <span class="ansi-blue-fg">=</span> tensor_util<span class="ansi-blue-fg">.</span>shape_tensor<span class="ansi-blue-fg">(</span>shape<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 238</span><span class="ansi-red-fg">     </span>minval <span class="ansi-blue-fg">=</span> ops<span class="ansi-blue-fg">.</span>convert_to_tensor<span class="ansi-blue-fg">(</span>minval<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>dtype<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;min&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    239</span>     maxval <span class="ansi-blue-fg">=</span> ops<span class="ansi-blue-fg">.</span>convert_to_tensor<span class="ansi-blue-fg">(</span>maxval<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>dtype<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;max&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    240</span>     seed1<span class="ansi-blue-fg">,</span> seed2 <span class="ansi-blue-fg">=</span> random_seed<span class="ansi-blue-fg">.</span>get_seed<span class="ansi-blue-fg">(</span>seed<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py</span> in <span class="ansi-cyan-fg">convert_to_tensor</span><span class="ansi-blue-fg">(value, dtype, name, preferred_dtype, dtype_hint)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1182</span>   preferred_dtype = deprecation.deprecated_argument_lookup(
-<span class="ansi-green-intense-fg ansi-bold">   1183</span>       &#34;dtype_hint&#34;, dtype_hint, &#34;preferred_dtype&#34;, preferred_dtype)
-<span class="ansi-green-fg">-&gt; 1184</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">return</span> convert_to_tensor_v2<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">,</span> preferred_dtype<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1185</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1186</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py</span> in <span class="ansi-cyan-fg">convert_to_tensor_v2</span><span class="ansi-blue-fg">(value, dtype, dtype_hint, name)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1240</span>       name<span class="ansi-blue-fg">=</span>name<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1241</span>       preferred_dtype<span class="ansi-blue-fg">=</span>dtype_hint<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">-&gt; 1242</span><span class="ansi-red-fg">       as_ref=False)
-</span><span class="ansi-green-intense-fg ansi-bold">   1243</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1244</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py</span> in <span class="ansi-cyan-fg">internal_convert_to_tensor</span><span class="ansi-blue-fg">(value, dtype, name, as_ref, preferred_dtype, ctx, accepted_result_types)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1295</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1296</span>     <span class="ansi-green-fg">if</span> ret <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1297</span><span class="ansi-red-fg">       </span>ret <span class="ansi-blue-fg">=</span> conversion_func<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>dtype<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">=</span>name<span class="ansi-blue-fg">,</span> as_ref<span class="ansi-blue-fg">=</span>as_ref<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1298</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1299</span>     <span class="ansi-green-fg">if</span> ret <span class="ansi-green-fg">is</span> NotImplemented<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/framework/tensor_conversion_registry.py</span> in <span class="ansi-cyan-fg">_default_conversion_function</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
-<span class="ansi-green-intense-fg ansi-bold">     50</span> <span class="ansi-green-fg">def</span> _default_conversion_function<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">,</span> as_ref<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     51</span>   <span class="ansi-green-fg">del</span> as_ref  <span class="ansi-red-fg"># Unused.</span>
-<span class="ansi-green-fg">---&gt; 52</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">return</span> constant_op<span class="ansi-blue-fg">.</span>constant<span class="ansi-blue-fg">(</span>value<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">=</span>name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     53</span> 
-<span class="ansi-green-intense-fg ansi-bold">     54</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/framework/constant_op.py</span> in <span class="ansi-cyan-fg">constant</span><span class="ansi-blue-fg">(value, dtype, shape, name)</span>
-<span class="ansi-green-intense-fg ansi-bold">    225</span>   &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">    226</span>   return _constant_impl(value, dtype, shape, name, verify_shape=False,
-<span class="ansi-green-fg">--&gt; 227</span><span class="ansi-red-fg">                         allow_broadcast=True)
-</span><span class="ansi-green-intense-fg ansi-bold">    228</span> 
-<span class="ansi-green-intense-fg ansi-bold">    229</span> 
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/site-packages/tensorflow_core/python/framework/constant_op.py</span> in <span class="ansi-cyan-fg">_constant_impl</span><span class="ansi-blue-fg">(value, dtype, shape, name, verify_shape, allow_broadcast)</span>
-<span class="ansi-green-intense-fg ansi-bold">    263</span>       tensor_util.make_tensor_proto(
-<span class="ansi-green-intense-fg ansi-bold">    264</span>           value<span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>dtype<span class="ansi-blue-fg">,</span> shape<span class="ansi-blue-fg">=</span>shape<span class="ansi-blue-fg">,</span> verify_shape<span class="ansi-blue-fg">=</span>verify_shape<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 265</span><span class="ansi-red-fg">           allow_broadcast=allow_broadcast))
-</span><span class="ansi-green-intense-fg ansi-bold">    266</span>   dtype_value <span class="ansi-blue-fg">=</span> attr_value_pb2<span class="ansi-blue-fg">.</span>AttrValue<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">=</span>tensor_value<span class="ansi-blue-fg">.</span>tensor<span class="ansi-blue-fg">.</span>dtype<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    267</span>   const_tensor = g.create_op(
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>09:13:50 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:14:23 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:469: FutureWarning: Default multi_class will be changed to &#39;auto&#39; in 0.22. Specify the multi_class option to silence this warning.
+  &#34;this warning.&#34;, FutureWarning)
+09:14:35 INFO:FAQ dataset and model updated..
+</pre>
 </div>
 </div>
 
@@ -1510,8 +1291,9 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="new_context" class="doc_header"><code>new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_context</code>(<strong><code>data</code></strong>)</p>
+<h4 id="new_context" class="doc_header"><code>new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_context</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
+<p>Stores the new context in the context dataframe</p>
 
 </div>
 
@@ -1571,6 +1353,29 @@ description: "Question Answering Automated Dialog System"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>09:14:35 DEBUG:&lt;function new_context at 0x7f5d18456680&gt;
+/opt/conda/lib/python3.7/site-packages/pandas/core/frame.py:7138: FutureWarning: Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass &#39;sort=False&#39;.
+
+To retain the current behavior and silence the warning, pass &#39;sort=True&#39;.
+
+  sort=sort,
+09:14:35 INFO:contexts dataset updated..
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -1592,56 +1397,9 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_minimal_faq_questions" class="doc_header"><code>set_minimal_faq_questions</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_faq_questions</code>(<strong><code>data</code></strong>)</p>
+<h4 id="set_minimal_faq_questions" class="doc_header"><code>set_minimal_faq_questions</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L241" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_faq_questions</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_minimal_contexts" class="doc_header"><code>set_minimal_contexts</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L244" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_contexts</code>(<strong><code>data</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_data_dict" class="doc_header"><code>set_data_dict</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L255" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_data_dict</code>(<strong><code>file</code></strong>, <strong><code>data</code></strong>, <strong><code>question_type</code></strong>, <strong><code>data_dir</code></strong>)</p>
-</blockquote>
+<p>Sets the faq configurations that assure a proper operation</p>
 
 </div>
 
@@ -1664,8 +1422,59 @@ description: "Question Answering Automated Dialog System"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_and_prepare_data" class="doc_header"><code>load_and_prepare_data</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L270" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_and_prepare_data</code>(<strong><code>context_data_file</code></strong>, <strong><code>faq_data_file</code></strong>, <strong><code>data</code></strong>, <strong><code>configs_faq</code></strong>)</p>
+<h4 id="set_minimal_contexts" class="doc_header"><code>set_minimal_contexts</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L264" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_contexts</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
+<p>Sets the context configurations that assure a proper operation</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="set_data_dict" class="doc_header"><code>set_data_dict</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L277" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_data_dict</code>(<strong><code>file</code></strong>, <strong><code>data</code></strong>, <strong><code>question_type</code></strong>, <strong><code>data_dir</code></strong>)</p>
+</blockquote>
+<p>Creates unexistent files</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="load_and_prepare_data" class="doc_header"><code>load_and_prepare_data</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L294" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_and_prepare_data</code>(<strong><code>context_data_file</code></strong>, <strong><code>faq_data_file</code></strong>, <strong><code>data</code></strong>, <strong><code>configs_faq</code></strong>)</p>
+</blockquote>
+<p>Calls the context and faq configuration routines</p>
 
 </div>
 
@@ -1781,30 +1590,17 @@ description: "Question Answering Automated Dialog System"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-26-059fa4f8b6c7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     84</span> test_set_minimal_contexts<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     85</span> test_set_data_dict_no_file<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 86</span><span class="ansi-red-fg"> </span>test_load_and_prepare_data<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.7/unittest/mock.py</span> in <span class="ansi-cyan-fg">patched</span><span class="ansi-blue-fg">(*args, **keywargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1253</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1254</span>                 args <span class="ansi-blue-fg">+=</span> tuple<span class="ansi-blue-fg">(</span>extra_args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1255</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>keywargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1256</span>             <span class="ansi-green-fg">except</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1257</span>                 if (patching not in entered_patchers and
-
-<span class="ansi-green-fg">&lt;ipython-input-26-059fa4f8b6c7&gt;</span> in <span class="ansi-cyan-fg">test_load_and_prepare_data</span><span class="ansi-blue-fg">(mock_popen)</span>
-<span class="ansi-green-intense-fg ansi-bold">     77</span>         data_dir <span class="ansi-blue-fg">=</span> path<span class="ansi-blue-fg">.</span>join<span class="ansi-blue-fg">(</span>tmpdirname<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;data&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     78</span>         <span class="ansi-red-fg">#config_file = path.join(tmpdirname,&#39;config_faq.json&#39;)</span>
-<span class="ansi-green-fg">---&gt; 79</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">assert</span> path<span class="ansi-blue-fg">.</span>isdir<span class="ansi-blue-fg">(</span>data_dir<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     80</span> 
-<span class="ansi-green-intense-fg ansi-bold">     81</span> 
-
-<span class="ansi-red-fg">AssertionError</span>: </pre>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>09:14:35 INFO: File created at /tmp/tmpe1fzbn5r/tmp_data.csv
+09:14:35 INFO: File created at /tmp/tmpi4mgn_tl/tmp_data.csv
+09:14:35 INFO: File created at /tmp/tmp006qpt5n/context_data.csv
+09:14:35 DEBUG:{&#39;context&#39;: defaultdict(&lt;class &#39;str&#39;&gt;, {&#39;path&#39;: &#39;/tmp/tmp006qpt5n/context_data.csv&#39;, &#39;df&#39;: Empty DataFrame
+Columns: [topic, context]
+Index: []})}
+09:14:35 INFO:Data directory created at /tmp/tmpn3sct0bz/data
+09:14:35 INFO: File created at /tmp/tmpn3sct0bz/data/faq_data.csv
+09:14:35 INFO: File created at /tmp/tmpn3sct0bz/data/context_data.csv
+</pre>
 </div>
 </div>
 

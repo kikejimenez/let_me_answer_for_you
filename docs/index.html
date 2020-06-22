@@ -5,8 +5,8 @@ title: Let Me Answer For You
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "A Simple and Powerful Deep Learning Dialog System for Quesiton and Answering "
-description: "A Simple and Powerful Deep Learning Dialog System for Quesiton and Answering "
+summary: "A Simple and Powerful Deep Learning Dialog System for Question and Answering "
+description: "A Simple and Powerful Deep Learning Dialog System for Question and Answering "
 ---
 <!--
 
@@ -36,6 +36,19 @@ description: "A Simple and Powerful Deep Learning Dialog System for Quesiton and
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Requirements">Requirements<a class="anchor-link" href="#Requirements"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The library has been tested in <code>python 3.7</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
 </div>
 </div>
@@ -57,13 +70,138 @@ description: "A Simple and Powerful Deep Learning Dialog System for Quesiton and
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Warning">Warning<a class="anchor-link" href="#Warning"> </a></h1>
+<h2 id="Initialize-the-Dialog-System">Initialize the Dialog System<a class="anchor-link" href="#Initialize-the-Dialog-System"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the first demo release in is expect to change during the next week.</p>
+<p>Install the configuration files by instantiating the <code>SystemClass</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>from let_me_answer_for_you.dialog_system import DialogSystem()
+
+ds = DialogSystem( context_data_file=None,
+        faq_data_file=None,
+        configs_faq=None,
+        download_models=True)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If the <strong>context_data_file</strong> or the <strong>faq_data_file</strong> parameters are  <code>None</code> , a <em>data</em> directory will be created in the directory where the script is running. The data directory will contain the FAQ or the context CSV files</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Get-Response">Get Response<a class="anchor-link" href="#Get-Response"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To get a response to a question call the method <code>question_answer</code> in the instance of  <code>SystemClass</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>ds.question_answer()
+
+Introduce question:
+what can you offer me at Intekglobal?
+
+
+what can you offer me at Intekglobal?:
+
+1: expert resources to connect your different devices and exchange data within those devices
+2: Connect with us for further information
+3: We like to provide world class solutions with complete features what you want to impletement in your business!</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="New-Question-Answer-Pair">New Question-Answer Pair<a class="anchor-link" href="#New-Question-Answer-Pair"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Populate the FAQ data file with a new question answer by calling the method <code>new_q_a</code>:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>ds.new_q_a()
+
+Introduce question:
+What type of Dialog System is this?
+
+Introduce the answer:
+Is a combination of context question answering system with a faq system</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="New-Context">New Context<a class="anchor-link" href="#New-Context"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The systems accept a response as a context. The advantage of having contexts is that many answers can be found in one context. To create a new context, call the <a href="/let_me_answer_for_you/settings#new_context"><code>new_context</code></a> method:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>ds.new_context()
+
+Give context a title:
+ IOT
+Introduce the context:
+We can provide expert resources to connect your different devices and exchange data within those devices. Further make the data accessible via web tools. Connect with us for further information.   DevOps Our team can help you organization to implement best DevOps practices that can automate the processes between software development and various IT teams, in order that they can build, test, and release software faster and more reliably.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Docker">Docker<a class="anchor-link" href="#Docker"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A container with all the configurations installed can be pulled it with the following instruction:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>docker pull ejimenezr/dialog_system</code></pre>
 
 </div>
 </div>
