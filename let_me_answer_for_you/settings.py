@@ -22,6 +22,8 @@ from collections import defaultdict
 
 # Cell
 def change_log_config():
+    '''Change Deeppavlov configuration files to ERROR mode
+    '''
     settings_file = path.join(get_settings_path(), 'log_config.json')
     #logs_key = 'disable_existing_loggers'
 
@@ -31,13 +33,13 @@ def change_log_config():
     settings_json['handlers']['stdout']['level'] = 'ERROR'
     settings_json['handlers']['uvicorn_handler']['level'] = 'ERROR'
 
-    settings_json['loggers']['deeppavlov']['level'] ='ERROR'
+    settings_json['loggers']['deeppavlov']['level'] = 'ERROR'
     settings_json['loggers']['deeppavlov']['propagate'] = True
 
-    settings_json['loggers']['uvicorn.access']['level'] ='ERROR'
+    settings_json['loggers']['uvicorn.access']['level'] = 'ERROR'
     settings_json['loggers']['uvicorn.access']['propagate'] = True
 
-    settings_json['loggers']['uvicorn.error']['level'] ='ERROR'
+    settings_json['loggers']['uvicorn.error']['level'] = 'ERROR'
     settings_json['loggers']['uvicorn.error']['propagate'] = True
 
     #settings_json[logs_key] = False
@@ -67,6 +69,9 @@ def run_shell_installs():
 
 # Cell
 def action_over_list_f(arr, v):
+    ''' v[0] and v[1] are dictionaries
+        arr is array of dictionaries
+    '''
 
     k_id, v_id = next(iter(v[0].items()))
 
@@ -136,6 +141,8 @@ def load_qa_models(
     config_tfidf=configs.faq.tfidf_logreg_en_faq,
     download=True
 ):
+    ''' Load the squad and faq models
+    '''
     qa_models = {
         'squad':
             {
@@ -150,6 +157,8 @@ def load_qa_models(
 
 
 def format_responses(question, responses):
+    '''Format question-response pair
+    '''
     formatted_response = f'{question}:\n\n'
     for k, res in enumerate(responses):
         formatted_response += f'{k+1}: {res}\n'
@@ -157,6 +166,8 @@ def format_responses(question, responses):
 
 
 def get_responses(contexts, question, qa_models, nb_squad_results=1):
+    ''' Get response from a quesiton using qa_models and contexts
+    '''
     responses = []
     for squad_model in qa_models['squad'].values():
         responses.extend(
@@ -177,6 +188,8 @@ def get_input(text):
 
 
 def question_response(data, qa_models, num_returned_values_per_squad_model=1):
+    ''' Receive response and call get_response()
+    '''
     question = get_input('Introduce question:\n')
 
     _, formatted_responses = get_responses(
@@ -187,6 +200,9 @@ def question_response(data, qa_models, num_returned_values_per_squad_model=1):
 
 # Cell
 def new_question_answer(data, qa_models):
+    ''' Asks for a new question-answer pair; store the result in the
+        faq dataframe and retrain the faq-model
+    '''
 
     question = get_input('Introduce question:\n')
 
@@ -205,6 +221,8 @@ def new_question_answer(data, qa_models):
 
 # Cell
 def new_context(data):
+    ''' Stores the new context in the context dataframe
+    '''
 
     new_context = pd.DataFrame(
         {
@@ -221,6 +239,8 @@ def new_context(data):
 
 # Cell
 def set_minimal_faq_questions(data):
+    ''' Sets the faq configurations that assure a proper operation
+    '''
     if data['df'].shape[0] > 1:
         return
     minimal_questions = [
@@ -242,6 +262,8 @@ def set_minimal_faq_questions(data):
 
 
 def set_minimal_contexts(data):
+    ''' Sets the context configurations that assure a proper operation
+    '''
     if data['df'].shape[0] > 0:
         return
 
@@ -253,6 +275,8 @@ def set_minimal_contexts(data):
 
 
 def set_data_dict(file, data, question_type, data_dir):
+    '''Creates unexistent files
+    '''
 
     data['path'] = file if file is not None else path.join(
         data_dir, question_type + '_data.csv'
@@ -268,6 +292,8 @@ def set_data_dict(file, data, question_type, data_dir):
 
 
 def load_and_prepare_data(context_data_file, faq_data_file, data, configs_faq):
+    '''Calls the context and faq configuration routines
+    '''
 
     PARENT_DIR = popen('$PWD').read().strip()
 

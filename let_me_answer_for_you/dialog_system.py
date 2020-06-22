@@ -21,6 +21,9 @@ logging.warning(' Warning Log Active')
 
 # Cell
 class DialogSystem:
+    ''' The DialogSystem class implements the main methods
+    defined in settings module
+    '''
     def __init__(
         self,
         context_data_file=None,

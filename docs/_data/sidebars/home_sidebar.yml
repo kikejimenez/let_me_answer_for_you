@@ -13,7 +13,7 @@ entries:
       title: Dialog System
       url: /settings
     - output: web,pdf
-      title: Title
+      title: Dialog System Class
       url: /dialog_system
     output: web
     title: let_me_answer_for_you
