@@ -42,7 +42,6 @@ def change_log_config():
     settings_json['loggers']['uvicorn.error']['level'] = 'ERROR'
     settings_json['loggers']['uvicorn.error']['propagate'] = True
 
-    #settings_json[logs_key] = False
 
     json.dump(settings_json, open(settings_file, 'w'))
 

@@ -52,10 +52,26 @@ description: "Class that implements the `question_response`, `new_question_answe
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DialogSystem" class="doc_header"><code>class</code> <code>DialogSystem</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L23" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DialogSystem</code>(<strong><code>context_data_file</code></strong>=<em><code>None</code></em>, <strong><code>faq_data_file</code></strong>=<em><code>None</code></em>, <strong><code>configs_faq</code></strong>=<em><code>None</code></em>, <strong><code>download_models</code></strong>=<em><code>True</code></em>)</p>
+<h2 id="DialogSystem" class="doc_header"><code>class</code> <code>DialogSystem</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L27" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DialogSystem</code>(<strong><code>context_data_file</code></strong>=<em><code>None</code></em>, <strong><code>faq_data_file</code></strong>=<em><code>None</code></em>, <strong><code>configs_faq</code></strong>=<em><code>None</code></em>, <strong><code>download_models</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
 <p>The DialogSystem class implements the main methods
-defined in settings module</p>
+defined in settings module.</p>
+<p>INPUT:</p>
+<ul>
+<li><p>context_data_file: csv file of contexts (default: None)</p>
+</li>
+<li><p>faq_data_file: csv file of FAQs (default: None)</p>
+</li>
+<li><p>configs_faq: json config file (default: None)</p>
+</li>
+<li><p>download_models: Indicates if download configuration files (default: True)</p>
+</li>
+</ul>
+<p>If the context or the faq files are not provided, a <em>data</em> directory with the missing files,
+will be created (in the same path where the module is running).</p>
+<p>When an instance is created, the 'run_shell_installs()' and 'load_and_prepare_data()' routines are called,
+also the <em>data</em> and <em>qa_models</em> attributes are created, they store the information of the dataframes
+and of the models, respectively.</p>
 
 </div>
 
@@ -65,9 +81,22 @@ defined in settings module</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.question_answer" class="doc_header"><code>DialogSystem.question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L47" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.question_answer</code>()</p>
+<h4 id="DialogSystem.question_answer" class="doc_header"><code>DialogSystem.question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.question_answer</code>(<strong><code>question</code></strong>)</p>
 </blockquote>
-<p>Gets answer from a question</p>
+<p>Gets answers to a question.</p>
+<p>INPUT:</p>
+<ul>
+<li><em>question</em> parameter </li>
+</ul>
+<p>The method creates the following attributes:</p>
+<ul>
+<li><p>'self.question' -&gt; the question parameter</p>
+</li>
+<li><p>'self.response' -&gt; a list of possible responses</p>
+</li>
+<li><p>'self.formatted_responses' -&gt; string of the question-answer pair</p>
+</li>
+</ul>
 
 </div>
 
@@ -77,9 +106,17 @@ defined in settings module</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.new_q_a" class="doc_header"><code>DialogSystem.new_q_a</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_q_a</code>()</p>
+<h4 id="DialogSystem.new_question_answer" class="doc_header"><code>DialogSystem.new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L80" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_question_answer</code>(<strong><code>question</code></strong>, <strong><code>answer</code></strong>)</p>
 </blockquote>
-<p>Stores new question answer</p>
+<p>Adds a new question-answer pair.</p>
+<p>INPUT:</p>
+<ul>
+<li><p>question</p>
+</li>
+<li><p>answer</p>
+</li>
+</ul>
+<p>The new question-answer pair is stored in the csv in the path <em>self.data['faq']['path']</em></p>
 
 </div>
 
@@ -89,14 +126,159 @@ defined in settings module</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.new_context" class="doc_header"><code>DialogSystem.new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_context</code>()</p>
+<h4 id="DialogSystem.new_context" class="doc_header"><code>DialogSystem.new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_context</code>(<strong><code>topic</code></strong>, <strong><code>context</code></strong>)</p>
 </blockquote>
-<p>Stores a new context</p>
+<p>Adds a new context.</p>
+<p>INPUT:</p>
+<ul>
+<li>topic (The title of the context)</li>
+<li>context</li>
+</ul>
+<p>The new context is stored in the csv in the path <em>self.data['context']['path']</em></p>
 
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Test-Examples">Test Examples<a class="anchor-link" href="#Test-Examples"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">DialogSystem</span><span class="p">(</span>
+    <span class="n">faq_data_file</span><span class="o">=</span><span class="s1">&#39;./faq_example.csv&#39;</span><span class="p">,</span>
+    <span class="n">context_data_file</span><span class="o">=</span><span class="s1">&#39;./context_example.csv&#39;</span><span class="p">,</span>
+    <span class="n">download_models</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package punkt to /home/jovyan/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/jovyan/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package perluniprops to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package perluniprops is already up-to-date!
+[nltk_data] Downloading package nonbreaking_prefixes to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package nonbreaking_prefixes is already up-to-date!
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">question_answer</span><span class="p">(</span><span class="n">question</span> <span class="o">=</span> <span class="s1">&#39;What is Intekglobal?&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">question</span> <span class="o">==</span> <span class="s1">&#39;What is Intekglobal?&#39;</span>
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">responses</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;This is the Intekglobal Dialog System&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">formatted_responses</span> <span class="o">==</span> <span class="s1">&#39;What is Intekglobal?:</span><span class="se">\n\n</span><span class="s1">1: This is the Intekglobal Dialog System</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">new_question_answer</span><span class="p">(</span><span class="n">question</span><span class="o">=</span><span class="s1">&#39;What day is today?&#39;</span><span class="p">,</span> <span class="n">answer</span><span class="o">=</span><span class="s1">&#39;Today is the day!&#39;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">question_answer</span><span class="p">(</span><span class="n">question</span><span class="o">=</span><span class="s1">&#39;What day is today?&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">formatted_responses</span> <span class="o">==</span> <span class="s1">&#39;What day is today?:</span><span class="se">\n\n</span><span class="s1">1: Today is the day!</span><span class="se">\n</span><span class="s1">&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:469: FutureWarning: Default multi_class will be changed to &#39;auto&#39; in 0.22. Specify the multi_class option to silence this warning.
+  &#34;this warning.&#34;, FutureWarning)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">context</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Space Exploration Technologies Corp., trading as SpaceX,</span>
+<span class="s1">is an American aerospace manufacturer and space transportation services company headquartered</span>
+<span class="s1">in Hawthorne, California. It was founded in 2002 by Elon Musk with the goal of reducing </span>
+<span class="s1">space transportation costs to enable the colonization of Mars. SpaceX has developed several launch </span>
+<span class="s1">vehicles,the Starlink satellite constellation, and the Dragon spacecraft.</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">new_context</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s1">&#39;SpaceX&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">question_answer</span><span class="p">(</span><span class="n">question</span><span class="o">=</span><span class="s1">&#39;What are SpaceX initials stand for?&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">ds</span><span class="o">.</span><span class="n">responses</span> <span class="o">==</span> <span class="p">[</span>
+    <span class="s1">&#39;Space Exploration Technologies Corp.&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Space Exploration Technologies Corp.&#39;</span><span class="p">,</span> <span class="s1">&#39;Today is the day!&#39;</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

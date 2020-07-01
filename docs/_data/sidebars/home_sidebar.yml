@@ -15,6 +15,9 @@ entries:
     - output: web,pdf
       title: Dialog System Class
       url: /dialog_system
+    - output: web,pdf
+      title: Text Interface
+      url: /chatbot
     output: web
     title: let_me_answer_for_you
   output: web

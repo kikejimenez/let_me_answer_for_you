@@ -2,6 +2,7 @@
   "let_me_answer_for_you": {
     "Overview": "/",
     "Settings and Configuration": "/settings",
-    "Dialog System Class": "/dialog_system"
+    "Dialog System Class": "/dialog_system",
+    "Text Interface": "/chatbot"
   }
 }
