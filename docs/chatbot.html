@@ -1,12 +1,12 @@
 ---
 
-title: Text Interface
+title: Chatbot Interface
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Implements a command line interface for the Chatbot"
-description: "Implements a command line interface for the Chatbot"
+summary: "Implements the question-answering chatbot"
+description: "Implements the question-answering chatbot"
 ---
 <!--
 
@@ -54,49 +54,12 @@ description: "Implements a command line interface for the Chatbot"
 <div class="output_markdown rendered_html output_subarea ">
 <h2 id="ChatBot" class="doc_header"><code>class</code> <code>ChatBot</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L26" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ChatBot</code>(<strong><code>context_data_file</code></strong>=<em><code>None</code></em>, <strong><code>faq_data_file</code></strong>=<em><code>None</code></em>, <strong><code>configs_faq</code></strong>=<em><code>None</code></em>, <strong><code>download_models</code></strong>=<em><code>True</code></em>) :: <a href="/let_me_answer_for_you/dialog_system#DialogSystem"><code>DialogSystem</code></a></p>
 </blockquote>
-<p>ChatBot Inherents all the parameters of 'DialogSystem'</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="DialogSystem" class="doc_header"><code>class</code> <code>DialogSystem</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L27" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DialogSystem</code>(<strong><code>context_data_file</code></strong>=<em><code>None</code></em>, <strong><code>faq_data_file</code></strong>=<em><code>None</code></em>, <strong><code>configs_faq</code></strong>=<em><code>None</code></em>, <strong><code>download_models</code></strong>=<em><code>True</code></em>)</p>
-</blockquote>
-<p>The DialogSystem class implements the main methods
-defined in settings module.</p>
-<p>INPUT:</p>
-<ul>
-<li><p>context_data_file: csv file of contexts (default: None)</p>
-</li>
-<li><p>faq_data_file: csv file of FAQs (default: None)</p>
-</li>
-<li><p>configs_faq: json config file (default: None)</p>
-</li>
-<li><p>download_models: Indicates if download configuration files (default: True)</p>
-</li>
-</ul>
-<p>If the context or the faq files are not provided, a <em>data</em> directory with the missing files,
-will be created (in the same path where the module is running).</p>
-<p>When an instance is created, the 'run_shell_installs()' and 'load_and_prepare_data()' routines are called,
-also the <em>data</em> and <em>qa_models</em> attributes are created, they store the information of the dataframes
-and of the models, respectively.</p>
+<p>This Bots implements the <a href="/let_me_answer_for_you/dialog_system#DialogSystem"><code>DialogSystem</code></a> class methods as a form of conversation in
+a text interface.</p>
+<p>The Bot starts asking to introduce the desired question and returns a set of answers,
+After this, asks if a better answer will be provided, if yes, asks for the type of answer
+(context or FAQ), if not, starts again.</p>
+<p>The chatbot stops by calling the method chatbot() of an instance of the class.</p>
 
 </div>
 
@@ -106,7 +69,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ChatBot.are_answers_ok" class="doc_header"><code>ChatBot.are_answers_ok</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L80" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.are_answers_ok</code>()</p>
+<h4 id="ChatBot.are_answers_ok" class="doc_header"><code>ChatBot.are_answers_ok</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L87" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.are_answers_ok</code>()</p>
 </blockquote>
 <p>Asks if a better answer will be provided</p>
 
@@ -118,13 +81,13 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ChatBot.chatbot" class="doc_header"><code>ChatBot.chatbot</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.chatbot</code>()</p>
+<h4 id="ChatBot.chatbot" class="doc_header"><code>ChatBot.chatbot</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.chatbot</code>()</p>
 </blockquote>
 <p>Chatbots logic:</p>
 <p>Asks for a question -&gt; Gives responses -&gt; Asks if a better answer will be provided</p>
 <p>If not starts again.</p>
-<p>If yes -&gt; asks if it is a context or a FAQ -&gt; asks for the response -&gt; starts again.</p>
-<p>The chatbot stops at any moment with keys Ctrl+C</p>
+<p>If yes -&gt; asks if it is a context or a FAQ -&gt; asks for the response and updates the data -&gt; starts again.</p>
+<p>The chatbot stops at any moment with the keys Ctrl+C</p>
 
 </div>
 
@@ -134,7 +97,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ChatBot.is_equal" class="doc_header"><code>ChatBot.is_equal</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L41" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.is_equal</code>(<strong><code>string</code></strong>, <strong><code>letter</code></strong>=<em><code>'y'</code></em>)</p>
+<h4 id="ChatBot.is_equal" class="doc_header"><code>ChatBot.is_equal</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L48" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.is_equal</code>(<strong><code>string</code></strong>, <strong><code>letter</code></strong>=<em><code>'y'</code></em>)</p>
 </blockquote>
 <p>Open I/O input until response is 'yes' or 'no'</p>
 
@@ -146,7 +109,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.new_context" class="doc_header"><code>DialogSystem.new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_context</code>(<strong><code>topic</code></strong>, <strong><code>context</code></strong>)</p>
+<h4 id="DialogSystem.new_context" class="doc_header"><code>DialogSystem.new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_context</code>(<strong><code>topic</code></strong>, <strong><code>context</code></strong>)</p>
 </blockquote>
 <p>Adds a new context.</p>
 <p>INPUT:</p>
@@ -154,7 +117,7 @@ and of the models, respectively.</p>
 <li>topic (The title of the context)</li>
 <li>context</li>
 </ul>
-<p>The new context is stored in the csv in the path <em>self.data['context']['path']</em></p>
+<p>The new context is stored in the path <em>self.data['context']['path']</em></p>
 
 </div>
 
@@ -164,7 +127,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ChatBot.new_context_interface" class="doc_header"><code>ChatBot.new_context_interface</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L72" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.new_context_interface</code>()</p>
+<h4 id="ChatBot.new_context_interface" class="doc_header"><code>ChatBot.new_context_interface</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.new_context_interface</code>()</p>
 </blockquote>
 <p>Asks for a new context</p>
 
@@ -176,7 +139,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.new_question_answer" class="doc_header"><code>DialogSystem.new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L80" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_question_answer</code>(<strong><code>question</code></strong>, <strong><code>answer</code></strong>)</p>
+<h4 id="DialogSystem.new_question_answer" class="doc_header"><code>DialogSystem.new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_question_answer</code>(<strong><code>question</code></strong>, <strong><code>answer</code></strong>)</p>
 </blockquote>
 <p>Adds a new question-answer pair.</p>
 <p>INPUT:</p>
@@ -186,7 +149,9 @@ and of the models, respectively.</p>
 <li><p>answer</p>
 </li>
 </ul>
-<p>The new question-answer pair is stored in the csv in the path <em>self.data['faq']['path']</em></p>
+<p>The new question-answer pair is stored in the path <em>self.data['faq']['path']</em>
+and models stored in <em>qa_models['faq']</em> get re-trained by calling the function
+<code>train_model</code> of the <code>deeppavlov</code> library</p>
 
 </div>
 
@@ -196,7 +161,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ChatBot.new_question_answer_interface" class="doc_header"><code>ChatBot.new_question_answer_interface</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.new_question_answer_interface</code>()</p>
+<h4 id="ChatBot.new_question_answer_interface" class="doc_header"><code>ChatBot.new_question_answer_interface</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.new_question_answer_interface</code>()</p>
 </blockquote>
 <p>Asks for  a new question-answer pair</p>
 
@@ -208,7 +173,7 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.question_answer" class="doc_header"><code>DialogSystem.question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.question_answer</code>(<strong><code>question</code></strong>)</p>
+<h4 id="DialogSystem.question_answer" class="doc_header"><code>DialogSystem.question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.question_answer</code>(<strong><code>question</code></strong>)</p>
 </blockquote>
 <p>Gets answers to a question.</p>
 <p>INPUT:</p>
@@ -219,11 +184,12 @@ and of the models, respectively.</p>
 <ul>
 <li><p>'self.question' -&gt; the question parameter</p>
 </li>
-<li><p>'self.response' -&gt; a list of possible responses</p>
+<li><p>'self.responses' -&gt; a dict of possible responses</p>
 </li>
-<li><p>'self.formatted_responses' -&gt; string of the question-answer pair</p>
+<li><p>'self.formatted_responses' -&gt; a formatted string of the possible responses</p>
 </li>
 </ul>
+<p>This method calls the functions <code>get_response</code> and 'format_responses' of the 'settings' module</p>
 
 </div>
 
@@ -233,9 +199,9 @@ and of the models, respectively.</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="ChatBot.question_answer_interface" class="doc_header"><code>ChatBot.question_answer_interface</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.question_answer_interface</code>()</p>
+<h4 id="ChatBot.question_answer_interface" class="doc_header"><code>ChatBot.question_answer_interface</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/chatbot.py#L62" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>ChatBot.question_answer_interface</code>()</p>
 </blockquote>
-<p>Inputs question and prints responses</p>
+<p>Gets 'self.formatted_responses' in 'print' function</p>
 
 </div>
 

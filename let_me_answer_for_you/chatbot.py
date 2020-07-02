@@ -24,7 +24,14 @@ logging.warning(' Warning Log Active')
 
 # Cell
 class ChatBot(DialogSystem):
-    ''' ChatBot Inherents all the parameters of 'DialogSystem'
+    ''' This Bots implements the `DialogSystem` class methods as a form of conversation in
+    a text interface. \n
+
+    The Bot starts asking to introduce the desired question and returns a set of answers,
+    After this, asks if a better answer will be provided, if yes, asks for the type of answer
+    (context or FAQ), if not, starts again.\n
+
+    The chatbot stops by calling the method chatbot() of an instance of the class.
     '''
     def __init__(
         self,
@@ -53,7 +60,7 @@ class ChatBot(DialogSystem):
                 res = input(string)[0].lower()
 
     def question_answer_interface(self):
-        '''Inputs question and prints responses
+        '''Gets 'self.formatted_responses' in 'print' function
         '''
         question = input('Introduce your question:\n')
         self.question_answer(question)
@@ -91,14 +98,14 @@ class ChatBot(DialogSystem):
         else:
             self.new_context_interface()
 
-        print('The bot has been updated. \n')
+        print('\n The bot has been updated. \n')
 
     def chatbot(self):
         ''' Chatbots logic:\n
              Asks for a question -> Gives responses -> Asks if a better answer will be provided \n
              If not starts again. \n
-             If yes -> asks if it is a context or a FAQ -> asks for the response -> starts again. \n
-             The chatbot stops at any moment with keys Ctrl+C
+             If yes -> asks if it is a context or a FAQ -> asks for the response and updates the data -> starts again. \n
+             The chatbot stops at any moment with the keys Ctrl+C
         '''
         while True:
             try:

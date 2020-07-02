@@ -13,10 +13,10 @@ entries:
       title: Settings and Configuration
       url: /settings
     - output: web,pdf
-      title: Dialog System Class
+      title: 'Dialog System '
       url: /dialog_system
     - output: web,pdf
-      title: Text Interface
+      title: Chatbot Interface
       url: /chatbot
     output: web
     title: let_me_answer_for_you
