@@ -271,7 +271,9 @@ def new_context(data):
 
 # Cell
 def set_minimal_faq_questions(data):
-    ''' Sets the faq configurations that assure a proper operation
+    ''' Sets the faq configurations that assure a proper operation.
+
+    If inexistent, a non-empty dataframe for faq is created with 'Question' and 'Answer as columns'
     '''
     if data['df'].shape[0] > 1:
         return
@@ -284,7 +286,7 @@ def set_minimal_faq_questions(data):
         'please populate your dataset with better responses',
         'The purpose of this automated answer is to initalize the FAQ system, if you are '
         +
-        'seeing this, you probably need to feed your FAQ dataset with more samples'
+        'seeing this, you probably need to feed your datasets with more samples'
     ]
     minimal_faqs_df = pd.DataFrame(
         {
@@ -298,7 +300,9 @@ def set_minimal_faq_questions(data):
 
 
 def set_minimal_contexts(data):
-    ''' Sets the context configurations that assure a proper operation
+    ''' Sets the context configurations that assure a proper operation.
+
+    If inexistent, a empy dataframe is created with 'topic' and 'context' as columns
     '''
     if data['df'].shape[0] > 0:
         return
@@ -328,7 +332,14 @@ def set_data_dict(file, data, question_type, data_dir):
 
 
 def load_and_prepare_data(context_data_file, faq_data_file, data, configs_faq):
-    '''Calls the context and faq configuration routines
+    '''Calls the context and faq configuration routines.
+
+    If dataframe files missing, it will create them in data directory.
+
+    If the data frames are provided they must have the following columns  for proper functioning:
+
+    - context: 'topic', 'context'
+    - faq: 'Question, 'Answer'
     '''
 
     PARENT_DIR = popen('$PWD').read().strip()

@@ -5,8 +5,8 @@ title: Dialog System
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Class that implements the `question_response`, `new_question_answer` and `new_context` methods"
-description: "Class that implements the `question_response`, `new_question_answer` and `new_context` methods"
+summary: "Implements the `question_response`, `new_question_answer` and `new_context` methods"
+description: "Implements the `question_response`, `new_question_answer` and `new_context` methods"
 ---
 <!--
 
@@ -72,6 +72,11 @@ will be created (in the same path where the module is running).</p>
 <p>When an instance is created, the 'run_shell_installs', 'load_and_prepare_data'
 and 'load_qa_models' of the settings module  are called. Also the <em>data</em> and <em>qa_models</em>
 attributes are created, they store the dataframes and models information, respectively.</p>
+<p>If the dataframes are provided they must have the following columns:</p>
+<ol>
+<li>context dataframe columns: 'topic', 'context'</li>
+<li>faq dataframe columns: 'Question, 'Answer'</li>
+</ol>
 
 </div>
 
@@ -81,7 +86,7 @@ attributes are created, they store the dataframes and models information, respec
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.new_context" class="doc_header"><code>DialogSystem.new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L104" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_context</code>(<strong><code>topic</code></strong>, <strong><code>context</code></strong>)</p>
+<h4 id="DialogSystem.new_context" class="doc_header"><code>DialogSystem.new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L110" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_context</code>(<strong><code>topic</code></strong>, <strong><code>context</code></strong>)</p>
 </blockquote>
 <p>Adds a new context.</p>
 <p>INPUT:</p>
@@ -99,7 +104,7 @@ attributes are created, they store the dataframes and models information, respec
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.new_question_answer" class="doc_header"><code>DialogSystem.new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_question_answer</code>(<strong><code>question</code></strong>, <strong><code>answer</code></strong>)</p>
+<h4 id="DialogSystem.new_question_answer" class="doc_header"><code>DialogSystem.new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L89" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.new_question_answer</code>(<strong><code>question</code></strong>, <strong><code>answer</code></strong>)</p>
 </blockquote>
 <p>Adds a new question-answer pair.</p>
 <p>INPUT:</p>
@@ -121,7 +126,7 @@ and the models in <em>qa_models['faq']</em> get re-trained by calling the functi
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="DialogSystem.question_answer" class="doc_header"><code>DialogSystem.question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.question_answer</code>(<strong><code>question</code></strong>)</p>
+<h4 id="DialogSystem.question_answer" class="doc_header"><code>DialogSystem.question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/dialog_system.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>DialogSystem.question_answer</code>(<strong><code>question</code></strong>)</p>
 </blockquote>
 <p>Gets answers to a question.</p>
 <p>INPUT:</p>
@@ -130,7 +135,7 @@ and the models in <em>qa_models['faq']</em> get re-trained by calling the functi
 </ul>
 <p>The method creates the following attributes:</p>
 <ul>
-<li><p>'self.question' -&gt; the question parameter</p>
+<li><p>'self.question' -&gt; the input parameter</p>
 </li>
 <li><p>'self.responses' -&gt; a dict of possible responses</p>
 </li>
@@ -218,25 +223,24 @@ and the models in <em>qa_models['faq']</em> get re-trained by calling the functi
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-14-5f26b5f71e52&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         faq_data_file<span class="ansi-blue-fg">=</span>path<span class="ansi-blue-fg">.</span>join<span class="ansi-blue-fg">(</span>tmpdirname<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;faq_example.csv&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span>         context_data_file<span class="ansi-blue-fg">=</span>path<span class="ansi-blue-fg">.</span>join<span class="ansi-blue-fg">(</span>tmpdirname<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;context_example.csv&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg">         </span>download_models<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>     )
-<span class="ansi-green-intense-fg ansi-bold">     11</span> 
-
-<span class="ansi-green-fg">&lt;ipython-input-12-06830ddea14f&gt;</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, context_data_file, faq_data_file, configs_faq, download_models)</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span>         download_models<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">True</span>
-<span class="ansi-green-intense-fg ansi-bold">     22</span>     ):
-<span class="ansi-green-fg">---&gt; 23</span><span class="ansi-red-fg">         </span>run_shell_installs<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     24</span>         self<span class="ansi-blue-fg">.</span>data <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#39;context&#39;</span><span class="ansi-blue-fg">:</span> defaultdict<span class="ansi-blue-fg">(</span>str<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;faq&#39;</span><span class="ansi-blue-fg">:</span> defaultdict<span class="ansi-blue-fg">(</span>str<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span>
-<span class="ansi-green-intense-fg ansi-bold">     25</span>         self<span class="ansi-blue-fg">.</span>download <span class="ansi-blue-fg">=</span> download_models
-
-<span class="ansi-red-fg">NameError</span>: name &#39;run_shell_installs&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package punkt to /home/jovyan/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/jovyan/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package perluniprops to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package perluniprops is already up-to-date!
+[nltk_data] Downloading package nonbreaking_prefixes to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package nonbreaking_prefixes is already up-to-date!
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+/opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:469: FutureWarning: Default multi_class will be changed to &#39;auto&#39; in 0.22. Specify the multi_class option to silence this warning.
+  &#34;this warning.&#34;, FutureWarning)
+</pre>
 </div>
 </div>
 

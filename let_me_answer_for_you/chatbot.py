@@ -24,14 +24,16 @@ logging.warning(' Warning Log Active')
 
 # Cell
 class ChatBot(DialogSystem):
-    ''' This Bots implements the `DialogSystem` class methods as a form of conversation in
-    a text interface. \n
+    ''' Inherits the `Dialog System` class and presents it as a conversation in a text interface. \n
 
-    The Bot starts asking to introduce the desired question and returns a set of answers,
+    The chatbot can be initialized by calling the method `chatbot` of an instance of the class.
+
+    Once the bot is initialized, it asks to introduce a question and returns a set of answers,
     After this, asks if a better answer will be provided, if yes, asks for the type of answer
     (context or FAQ), if not, starts again.\n
 
-    The chatbot stops by calling the method chatbot() of an instance of the class.
+    It can be exited by pressing Crtl+C keys.
+
     '''
     def __init__(
         self,
@@ -50,7 +52,7 @@ class ChatBot(DialogSystem):
         '''
 
         not_letter = 'y' if letter == 'n' else 'n'
-        res = input(string)[0].lower()
+        res = input(string).strip()[0].lower()
         while True:
             if res == letter:
                 return True
@@ -92,7 +94,7 @@ class ChatBot(DialogSystem):
 
         elif self.is_equal(
                 'If the answer will be given as a CONTEXT type "yes", ' +
-                'otherwise type "no" [yes = Context, no = FAQ]', 'n'
+                'otherwise type "no" [yes = Context, no = FAQ]: ', 'n'
         ):
             self.new_question_answer_interface()
         else:

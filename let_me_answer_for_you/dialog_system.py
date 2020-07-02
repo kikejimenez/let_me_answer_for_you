@@ -37,6 +37,12 @@ class DialogSystem:
     When an instance is created, the 'run_shell_installs', 'load_and_prepare_data'
     and 'load_qa_models' of the settings module  are called. Also the *data* and *qa_models*
     attributes are created, they store the dataframes and models information, respectively.\n
+
+
+    If the dataframes are provided they must have the following columns:
+
+     1. context dataframe columns: 'topic', 'context'
+     2. faq dataframe columns: 'Question, 'Answer'
     '''
     def __init__(
         self,
@@ -63,7 +69,7 @@ class DialogSystem:
         INPUT: \n
         - *question* parameter \n
         The method creates the following attributes:\n
-        - 'self.question' -> the question parameter \n
+        - 'self.question' -> the input parameter \n
         - 'self.responses' -> a dict of possible responses \n
         - 'self.formatted_responses' -> a formatted string of the possible responses
 
