@@ -43,9 +43,9 @@ The package `let_me_answer_for_you` consists of three modules: [settings](/let_m
 
 The `chatbot.py` file of the repo, calls the `ChatBot` class in `chatbot`. This class is a child of the `DialogSystem` class in `dialog_system`. The `DialogSystem`  class has the three main methods of the library:  
 
-  1. [question_answering](/let_me_answer_for_you/dialog_system#DialogSystem.question_answer)
-  2. [new_question_answer](/let_me_answer_for_you/dialog_system#DialogSystem.new_question_answer)
-  3. [new_context](/let_me_answer_for_you/dialog_system#DialogSystem.new_context)
+  1. [question_answering](https://kikejimenez.github.io/let_me_answer_for_you/dialog_system#DialogSystem.question_answer)
+  2. [new_question_answer](https://kikejimenez.github.io/let_me_answer_for_you/dialog_system#DialogSystem.new_question_answer)
+  3. [new_context](https://kikejimenez.github.io/let_me_answer_for_you/dialog_system#DialogSystem.new_context)
 
 The first method retrieves a set of answers for a given question. The second method adds a new question-answer pair to the FAQ data and retrains the model. The third method adds a new context to the context data. _These are the methods that may be exported as the API calls._
 
