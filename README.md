@@ -49,7 +49,7 @@ The `chatbot.py` file of the repo, calls the `ChatBot` class in `chatbot` and is
 
 The first method retrieves a set of answers for a given question. The second method adds a new question-answer pair to the FAQ data and retrains the model. The third method adds a new context to the context data. _These are the methods that may be exported as the API calls._
 
-#### [Read the Docs](/let_me_answer_for_you/index)
+#### [Read the Docs](https://kikejimenez.github.io/let_me_answer_for_you/)
 
 #### Requirements
 
