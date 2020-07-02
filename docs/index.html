@@ -5,8 +5,8 @@ title: Let Me Answer For You
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "A Simple and Powerful Deep Learning Dialog System for Question and Answering "
-description: "A Simple and Powerful Deep Learning Dialog System for Question and Answering "
+summary: "A deep learning dialog system that answers specific and complex questions. "
+description: "A deep learning dialog system that answers specific and complex questions. "
 ---
 <!--
 
@@ -29,14 +29,128 @@ description: "A Simple and Powerful Deep Learning Dialog System for Question and
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>{% include image.html alt="Exporting from nbdev" caption="The three Dialog Systems' methods" max-width="1000" file="/let_me_answer_for_you/images/let_me_answer_for_you.gif" %}</p>
+<p>Built on top of the  <a href="https://deeppavlov.ai/">deeppavlov library</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Requirements">Requirements<a class="anchor-link" href="#Requirements"> </a></h2>
+<h2 id="Pip-Install">Pip Install<a class="anchor-link" href="#Pip-Install"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The library can be found on <strong>PyPI</strong> so you can just run:</p>
+
+<pre><code>pip install let_me_answer_for_you</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-Usage">Simple Usage<a class="anchor-link" href="#Simple-Usage"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Download the file <code>chatbot.py</code> of the <a href="https://github.com/kikejimenez/let_me_answer_for_you">GitHub</a> repository and run:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>python chatbot.py</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After the installation process is finished,  the following interface appears:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>{% include image.html alt="Exporting from nbdev" caption="In this example neither the FAQ or context datasets have samples. After the first context is added, it appears as a reponse to the typed answer." max-width="800" file="/let_me_answer_for_you/images/context_spacex.gif" %}</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>{% include image.html alt="Exporting from nbdev" caption="The example adds a new question-answer pair. The context of the first example also provides an answer." max-width="800" file="/let_me_answer_for_you/images/spacex_faq.gif" %}</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Technologies">Technologies<a class="anchor-link" href="#Technologies"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Chatbot is based on two types of question/answer models:</p>
+<ol>
+<li><a href="http://docs.deeppavlov.ai/en/master/features/models/squad.html">Question Answering Model for SQuAD dataset</a>  </li>
+<li><a href="http://docs.deeppavlov.ai/en/master/features/models/kbqa.html">Knowledge Base Question Answering</a></li>
+</ol>
+<p>The first type of models can answer several questions from the same context, while the second type is very useful for specific and complex questions.
+It is strongly recommended to consult the <a href="https://deeppavlov.ai/">deeppavlov library</a>  for further details of the available models for dialog systems.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Structure-of-the--Package">Structure of the  Package<a class="anchor-link" href="#Structure-of-the--Package"> </a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The package <code>let_me_answer_for_you</code> consists of three modules: <a href="/let_me_answer_for_you/settings">settings</a>, <a href="/let_me_answer_for_you/dialog_system">dialog_system</a> and <a href="/let_me_answer_for_you/chatbot">chatbot</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>chatbot.py</code> file of the repo, calls the <a href="/let_me_answer_for_you/chatbot#ChatBot"><code>ChatBot</code></a> class in <a href="/let_me_answer_for_you/chatbot"><code>chatbot</code></a> and is the child of the <a href="/let_me_answer_for_you/dialog_system#DialogSystem"><code>DialogSystem</code></a> class in <a href="/let_me_answer_for_you/dialog_system"><code>dialog_system</code></a>. This last class  has the three main methods of the library:</p>
+<ol>
+<li><a href="/let_me_answer_for_you/dialog_system#DialogSystem.question_answer">question_answering</a></li>
+<li><a href="/let_me_answer_for_you/dialog_system#DialogSystem.new_question_answer">new_question_answer</a></li>
+<li><a href="/let_me_answer_for_you/dialog_system#DialogSystem.new_context">new_context</a></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first method retrieves a set of answers for a given question. The second method adds a new question-answer pair to the FAQ data and retrains the model. The third method adds a new context to the context data. <em>These are the methods that may be exported as the API calls.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Read-the-Docs"><a href="/let_me_answer_for_you">Read the Docs</a><a class="anchor-link" href="#Read-the-Docs"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Requirements">Requirements<a class="anchor-link" href="#Requirements"> </a></h4>
 </div>
 </div>
 </div>
@@ -49,151 +163,13 @@ description: "A Simple and Powerful Deep Learning Dialog System for Question and
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install">Install<a class="anchor-link" href="#Install"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Pip">Pip<a class="anchor-link" href="#Pip"> </a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The system can be installed via the <code>pip</code> command:</p>
-
-<pre><code>pip install let_me_answer_for_you</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Initialize-the-Dialog-System">Initialize the Dialog System<a class="anchor-link" href="#Initialize-the-Dialog-System"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Install the configuration files by instantiating the <code>SystemClass</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>from let_me_answer_for_you.dialog_system import DialogSystem()
-
-ds = DialogSystem( context_data_file=None,
-        faq_data_file=None,
-        configs_faq=None,
-        download_models=True)</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If the <strong>context_data_file</strong> or the <strong>faq_data_file</strong> parameters are  <code>None</code> , a <em>data</em> directory will be created in the directory where the script is running. The data directory will contain the FAQ or the context CSV files</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Get-Response">Get Response<a class="anchor-link" href="#Get-Response"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To get a response to a question call the method <code>question_answer</code> in the instance of  <code>SystemClass</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>ds.question_answer()
-
-Introduce question:
-what can you offer me at Intekglobal?
-
-
-what can you offer me at Intekglobal?:
-
-1: expert resources to connect your different devices and exchange data within those devices
-2: Connect with us for further information
-3: We like to provide world class solutions with complete features what you want to impletement in your business!</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="New-Question-Answer-Pair">New Question-Answer Pair<a class="anchor-link" href="#New-Question-Answer-Pair"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Populate the FAQ data file with a new question answer by calling the method <code>new_q_a</code>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>ds.new_q_a()
-
-Introduce question:
-What type of Dialog System is this?
-
-Introduce the answer:
-Is a combination of context question answering system with a faq system</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="New-Context">New Context<a class="anchor-link" href="#New-Context"> </a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The systems accept a response as a context. The advantage of having contexts is that many answers can be found in one context. To create a new context, call the <a href="/let_me_answer_for_you/settings#new_context"><code>new_context</code></a> method:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>ds.new_context()
-
-Give context a title:
- IOT
-Introduce the context:
-We can provide expert resources to connect your different devices and exchange data within those devices. Further make the data accessible via web tools. Connect with us for further information.   DevOps Our team can help you organization to implement best DevOps practices that can automate the processes between software development and various IT teams, in order that they can build, test, and release software faster and more reliably.</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Docker">Docker<a class="anchor-link" href="#Docker"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A container with all the configurations installed can be pulled it with the following instruction:</p>
+<p>A container with all the configurations installed is available:</p>
 
 </div>
 </div>

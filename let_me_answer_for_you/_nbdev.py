@@ -10,8 +10,8 @@ index = {"change_log_config": "01_settings.ipynb",
          "select_faq_responses": "01_settings.ipynb",
          "select_squad_responses": "01_settings.ipynb",
          "load_qa_models": "01_settings.ipynb",
-         "format_responses": "01_settings.ipynb",
          "get_responses": "01_settings.ipynb",
+         "format_responses": "01_settings.ipynb",
          "get_input": "01_settings.ipynb",
          "question_response": "01_settings.ipynb",
          "new_question_answer": "01_settings.ipynb",
@@ -20,10 +20,12 @@ index = {"change_log_config": "01_settings.ipynb",
          "set_minimal_contexts": "01_settings.ipynb",
          "set_data_dict": "01_settings.ipynb",
          "load_and_prepare_data": "01_settings.ipynb",
-         "DialogSystem": "02_dialog_system.ipynb"}
+         "DialogSystem": "02_dialog_system.ipynb",
+         "ChatBot": "03_chatbot.ipynb"}
 
 modules = ["settings.py",
-           "dialog_system.py"]
+           "dialog_system.py",
+           "chatbot.py"]
 
 doc_url = "https://kikejimenez.github.io/let_me_answer_for_you/"
 

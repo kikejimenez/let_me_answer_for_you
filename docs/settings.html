@@ -77,7 +77,7 @@ description: "Question Answering Automated Dialog System "
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_shell_installs" class="doc_header"><code>run_shell_installs</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L50" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_shell_installs</code>()</p>
+<h4 id="run_shell_installs" class="doc_header"><code>run_shell_installs</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_shell_installs</code>()</p>
 </blockquote>
 <p>Run install commands</p>
 
@@ -109,7 +109,7 @@ description: "Question Answering Automated Dialog System "
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="action_over_list_f" class="doc_header"><code>action_over_list_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>action_over_list_f</code>(<strong><code>arr</code></strong>, <strong><code>v</code></strong>)</p>
+<h4 id="action_over_list_f" class="doc_header"><code>action_over_list_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L70" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>action_over_list_f</code>(<strong><code>arr</code></strong>, <strong><code>v</code></strong>)</p>
 </blockquote>
 <p>v[0] and v[1] are dictionaries
 arr is array of dictionaries</p>
@@ -135,9 +135,10 @@ arr is array of dictionaries</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="replacement_f" class="doc_header"><code>replacement_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L84" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replacement_f</code>(<strong><code>model_config</code></strong>, <strong>**<code>args</code></strong>)</p>
+<h4 id="replacement_f" class="doc_header"><code>replacement_f</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>replacement_f</code>(<strong><code>model_config</code></strong>, <strong>**<code>args</code></strong>)</p>
 </blockquote>
-<p>Replaces the model config dictionary with new values</p>
+<p>Replaces the model config dictionary with new values
+provided in **args</p>
 
 </div>
 
@@ -161,7 +162,7 @@ arr is array of dictionaries</p>
 
 
 <span class="k">def</span> <span class="nf">gen_list_keys_for_tests</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;This is functio is used for tests</span>
+    <span class="sd">&#39;&#39;&#39;This function is used for tests</span>
 <span class="sd">    &#39;&#39;&#39;</span>
 
     <span class="n">str_n</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="si">:</span><span class="s1">1</span><span class="si">}</span><span class="s1">&#39;</span>
@@ -548,25 +549,35 @@ arr is array of dictionaries</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:09:15 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:15 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
-09:09:15 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:16 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
-100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 6.87MB/s]
+<pre>09:56:59 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:56:59 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
+09:56:59 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:00 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
+100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 7.71MB/s]
+[nltk_data] Downloading package punkt to /home/jovyan/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/jovyan/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package perluniprops to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package perluniprops is already up-to-date!
+[nltk_data] Downloading package nonbreaking_prefixes to
+[nltk_data]     /home/jovyan/nltk_data...
+[nltk_data]   Package nonbreaking_prefixes is already up-to-date!
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-09:09:17 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:18 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
-09:09:18 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:18 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
-100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 5.89MB/s]
+09:57:02 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:02 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
+09:57:02 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:02 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
+100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 9.63MB/s]
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-09:09:21 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:21 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
-09:09:21 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:22 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
-100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 12.7MB/s]
+09:57:07 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:07 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz.md5 HTTP/1.1&#34; 200 189
+09:57:07 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:08 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /faq/mipt/en_mipt_faq_v4.tar.gz HTTP/1.1&#34; 200 12276
+100%|██████████| 12.3k/12.3k [00:00&lt;00:00, 6.32MB/s]
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
 </pre>
@@ -720,32 +731,125 @@ arr is array of dictionaries</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:09:27 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:28 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/bert/cased_L-12_H-768_A-12.zip.md5 HTTP/1.1&#34; 200 386
-09:09:29 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:29 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/squad_bert.tar.gz.md5 HTTP/1.1&#34; 200 184
-09:09:46 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
-09:09:47 DEBUG:Responses: []
-09:09:47 DEBUG:Top Responses: []
-09:09:49 DEBUG:Responses: [list([[&#39;Elon Musk&#39;], [203], [50257280.0]])]
-09:09:49 DEBUG:Top Responses: [&#39;Elon Musk&#39;]
-09:09:50 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [6978.86279296875]])
+<pre>09:57:11 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:11 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/bert/cased_L-12_H-768_A-12.zip.md5 HTTP/1.1&#34; 200 386
+09:57:13 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:13 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/squad_bert.tar.gz.md5 HTTP/1.1&#34; 200 184
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/tokenization.py:125: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:37: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:222: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:222: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:193: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/bert/bert_squad.py:81: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/bert/bert_squad.py:178: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/modeling.py:178: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/modeling.py:418: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+09:57:16 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/modeling.py:499: The name tf.assert_less_equal is deprecated. Please use tf.compat.v1.assert_less_equal instead.
+
+09:57:16 WARNING:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+09:57:17 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/modeling.py:366: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+09:57:17 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/modeling.py:680: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+09:57:17 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+09:57:17 WARNING:From /opt/conda/lib/python3.7/site-packages/bert_dp/modeling.py:283: The name tf.erf is deprecated. Please use tf.math.erf instead.
+
+09:57:19 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/bert/bert_squad.py:154: The name tf.matrix_band_part is deprecated. Please use tf.linalg.band_part instead.
+
+09:57:19 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/bert/bert_squad.py:166: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+09:57:19 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:234: The name tf.train.AdadeltaOptimizer is deprecated. Please use tf.compat.v1.train.AdadeltaOptimizer instead.
+
+09:57:19 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:127: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+09:57:19 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:127: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+09:57:28 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/bert/bert_squad.py:89: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+09:57:32 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/bert/bert_squad.py:94: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+09:57:32 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/models/tf_model.py:54: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+09:57:32 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+09:57:34 DEBUG:Responses: []
+09:57:34 DEBUG:Top Responses: []
+09:57:36 DEBUG:Responses: [list([[&#39;Elon Musk&#39;], [203], [50257280.0]])]
+09:57:36 DEBUG:Top Responses: [&#39;Elon Musk&#39;]
+09:57:38 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [6978.86279296875]])
  list([[&#39;north of mexico&#39;], [22], [81567.328125]])]
-09:09:50 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
-09:09:50 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:51 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /embeddings/wiki-news-300d-1M-char.vec.md5 HTTP/1.1&#34; 200 61
-09:09:51 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:51 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /embeddings/wiki-news-300d-1M.vec.md5 HTTP/1.1&#34; 200 56
-09:09:55 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
-09:09:56 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/squad_model_1.4_cpu_compatible.tar.gz.md5 HTTP/1.1&#34; 200 389
-09:10:15 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
-09:10:16 DEBUG:Responses: []
-09:10:16 DEBUG:Top Responses: []
-09:10:18 DEBUG:Responses: [list([[&#39;Elon Musk&#39;], [203], [36056324.0]])]
-09:10:18 DEBUG:Top Responses: [&#39;Elon Musk&#39;]
-09:10:18 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [564.4996948242188]])
+09:57:38 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:57:38 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:38 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /embeddings/wiki-news-300d-1M-char.vec.md5 HTTP/1.1&#34; 200 61
+09:57:38 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:39 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /embeddings/wiki-news-300d-1M.vec.md5 HTTP/1.1&#34; 200 56
+09:57:43 DEBUG:Starting new HTTP connection (1): files.deeppavlov.ai:80
+09:57:43 DEBUG:http://files.deeppavlov.ai:80 &#34;GET /deeppavlov_data/squad_model_1.4_cpu_compatible.tar.gz.md5 HTTP/1.1&#34; 200 389
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/contrib/cudnn_rnn/python/ops/cudnn_rnn_ops.py:122: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/layers/tf_layers.py:595: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/layers/tf_layers.py:600: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/contrib/cudnn_rnn/python/ops/cudnn_rnn_ops.py:133: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/contrib/cudnn_rnn/python/ops/cudnn_rnn_ops.py:139: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/contrib/cudnn_rnn/python/ops/cudnn_rnn_ops.py:155: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/core/layers/tf_layers.py:812: calling reverse_sequence (from tensorflow.python.ops.array_ops) with seq_dim is deprecated and will be removed in a future version.
+Instructions for updating:
+seq_dim is deprecated, use seq_axis instead
+09:57:45 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/python/util/deprecation.py:507: calling reverse_sequence (from tensorflow.python.ops.array_ops) with batch_dim is deprecated and will be removed in a future version.
+Instructions for updating:
+batch_dim is deprecated, use batch_axis instead
+09:57:46 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/squad/utils.py:101: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+09:57:48 WARNING:From /opt/conda/lib/python3.7/site-packages/deeppavlov/models/squad/utils.py:139: The name tf.get_variable_scope is deprecated. Please use tf.compat.v1.get_variable_scope instead.
+
+09:57:59 WARNING:From /opt/conda/lib/python3.7/site-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+09:58:07 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:58:09 DEBUG:Responses: []
+09:58:09 DEBUG:Top Responses: []
+09:58:11 DEBUG:Responses: [list([[&#39;Elon Musk&#39;], [203], [36056324.0]])]
+09:58:11 DEBUG:Top Responses: [&#39;Elon Musk&#39;]
+09:58:11 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [564.4996948242188]])
  list([[&#39;north of mexico&#39;], [22], [138151.90625]])]
-09:10:18 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:58:11 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
 </pre>
 </div>
 </div>
@@ -776,7 +880,15 @@ arr is array of dictionaries</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="load_qa_models" class="doc_header"><code>load_qa_models</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_qa_models</code>(<strong><code>config_rnet</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/squad/squad.json')</code></em>, <strong><code>config_bert</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/squad/squad_bert.json')</code></em>, <strong><code>config_tfidf</code></strong>=<em><code>PosixPath('/opt/conda/lib/python3.7/site-packages/deeppavlov/configs/faq/tfidf_logreg_en_faq.json')</code></em>, <strong><code>download</code></strong>=<em><code>True</code></em>)</p>
 </blockquote>
-<p>Load the squad and faq models</p>
+<p>Load the squad and faq models
+INPUT:</p>
+<ul>
+<li>config_rnet -&gt; path to json config file</li>
+<li>config_bert -&gt; path to json config file</li>
+<li>config_tfidf -&gt; path to json config file</li>
+<li>download -&gt; download files (True/False)</li>
+</ul>
+<p>The default for the config files are the deeppavlov config files. The default download is True.</p>
 
 </div>
 
@@ -799,34 +911,17 @@ arr is array of dictionaries</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="format_responses" class="doc_header"><code>format_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L159" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>format_responses</code>(<strong><code>question</code></strong>, <strong><code>responses</code></strong>)</p>
+<h4 id="get_responses" class="doc_header"><code>get_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L165" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_responses</code>(<strong><code>contexts</code></strong>, <strong><code>question</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>nb_squad_results</code></strong>=<em><code>1</code></em>)</p>
 </blockquote>
-<p>Format question-response pair</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_responses" class="doc_header"><code>get_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L168" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_responses</code>(<strong><code>contexts</code></strong>, <strong><code>question</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>nb_squad_results</code></strong>=<em><code>1</code></em>)</p>
-</blockquote>
-<p>Get response from a quesiton using qa_models and contexts</p>
+<p>Generates responses from a question</p>
+<p>INPUT:</p>
+<ul>
+<li><p>question -&gt; question string</p>
+</li>
+<li><p>contexts -&gt; list of contexts</p>
+</li>
+<li>qa_models -&gt; dictionary of available models (see load_qa_models)</li>
+</ul>
 
 </div>
 
@@ -891,24 +986,29 @@ arr is array of dictionaries</p>
             <span class="n">config_tfidf</span><span class="o">=</span><span class="n">faq_files</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">],</span> <span class="n">download</span><span class="o">=</span><span class="kc">False</span>
         <span class="p">)</span>
 
-        <span class="n">responses</span><span class="p">,</span> <span class="n">format_responses</span> <span class="o">=</span> <span class="n">get_responses</span><span class="p">(</span>
+        <span class="n">question</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="n">get_responses</span><span class="p">(</span>
             <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">intekglobal_context</span><span class="p">),</span>
             <span class="s1">&#39;Where is Intekglobal?&#39;</span><span class="p">,</span>
             <span class="n">qa_models</span><span class="p">,</span>
             <span class="n">nb_squad_results</span><span class="o">=</span><span class="mi">2</span>
         <span class="p">)</span>
 
-        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">format_responses</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Question: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Responses: </span><span class="si">{</span><span class="n">responses</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
             <span class="n">response</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;north of mexico&#39;</span><span class="p">,</span> <span class="s1">&#39;TJ&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes it is!&#39;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">responses</span>
+            <span class="k">for</span> <span class="n">model_responses</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">[</span><span class="s1">&#39;squad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">model_responses</span>
         <span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">test_get_responses_with_empty_context</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">tmpdirname</span><span class="p">:</span>
-        <span class="n">min_faqs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Minimum number of questions?&#39;</span><span class="p">,</span><span class="s1">&#39;This is the other question?&#39;</span><span class="p">],</span> <span class="s1">&#39;Answer&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span><span class="s1">&#39;yes&#39;</span><span class="p">]}</span>
+        <span class="n">min_faqs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Question&#39;</span><span class="p">:</span>
+                <span class="p">[</span><span class="s1">&#39;Minimum number of questions?&#39;</span><span class="p">,</span> <span class="s1">&#39;This is the other question?&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;Answer&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="s1">&#39;yes&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
         <span class="n">faq_files</span> <span class="o">=</span> <span class="n">mock_faq_files</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span> <span class="n">min_faqs</span><span class="p">)</span>
 
         <span class="n">qa_models</span> <span class="o">=</span> <span class="n">load_qa_models</span><span class="p">(</span>
@@ -916,16 +1016,16 @@ arr is array of dictionaries</p>
         <span class="p">)</span>
         <span class="n">empty_context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;topic&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;context&#39;</span><span class="p">:</span> <span class="p">[]}</span>
 
-        <span class="n">responses</span><span class="p">,</span> <span class="n">format_responses</span> <span class="o">=</span> <span class="n">get_responses</span><span class="p">(</span>
+        <span class="n">question</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="n">get_responses</span><span class="p">(</span>
             <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">empty_context</span><span class="p">),</span>
             <span class="s1">&#39;What is the minimun number of FAQ questions&#39;</span><span class="p">,</span>
             <span class="n">qa_models</span><span class="p">,</span>
             <span class="n">nb_squad_results</span><span class="o">=</span><span class="mi">2</span>
         <span class="p">)</span>
 
-        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">format_responses</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="n">responses</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Two&#39;</span><span class="p">]</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Question: </span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; Responses: </span><span class="si">{</span><span class="n">responses</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">responses</span><span class="p">[</span><span class="s1">&#39;faq&#39;</span><span class="p">][</span><span class="s1">&#39;tfidf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Two&#39;</span><span class="p">]</span>
 
 
 <span class="n">test_get_intekglobal_responses</span><span class="p">()</span>
@@ -944,35 +1044,131 @@ arr is array of dictionaries</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:10:40 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
-09:10:59 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+<pre>09:58:39 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+09:59:08 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-09:11:04 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [120.95974731445312]])
+09:59:28 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [120.95974731445312]])
  list([[&#39;north of mexico&#39;], [22], [174602.40625]])]
-09:11:04 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
-09:11:07 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [22507.34375]])
+09:59:28 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:59:31 DEBUG:Responses: [list([[&#39;TJ&#39;], [44], [22507.34375]])
  list([[&#39;north of mexico&#39;], [22], [269778.3125]])]
-09:11:07 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
-09:11:07 DEBUG:[&#39;north of mexico&#39;, &#39;TJ&#39;, &#39;north of mexico&#39;, &#39;TJ&#39;, &#39;Yes it is!&#39;]
-09:11:07 DEBUG:Where is Intekglobal?:
-
-1: north of mexico
-2: TJ
-3: Yes it is!
-
-09:11:30 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
-09:11:59 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+09:59:31 DEBUG:Top Responses: [&#39;north of mexico&#39;, &#39;TJ&#39;]
+09:59:31 DEBUG: Question: Where is Intekglobal?
+09:59:31 DEBUG: Responses: {&#39;squad&#39;: defaultdict(&lt;class &#39;list&#39;&gt;, {&#39;rnet&#39;: [&#39;north of mexico&#39;, &#39;TJ&#39;], &#39;bert&#39;: [&#39;north of mexico&#39;, &#39;TJ&#39;]}), &#39;faq&#39;: defaultdict(&lt;class &#39;list&#39;&gt;, {&#39;tfidf&#39;: [&#39;Yes it is!&#39;]})}
+09:59:53 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+10:00:21 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-09:12:06 DEBUG:Responses: []
-09:12:06 DEBUG:Top Responses: []
-09:12:06 DEBUG:Responses: []
-09:12:06 DEBUG:Top Responses: []
-09:12:06 DEBUG:[&#39;Two&#39;]
-09:12:06 DEBUG:What is the minimun number of FAQ questions:
+10:00:27 DEBUG:Responses: []
+10:00:27 DEBUG:Top Responses: []
+10:00:27 DEBUG:Responses: []
+10:00:27 DEBUG:Top Responses: []
+10:00:27 DEBUG: Question: What is the minimun number of FAQ questions
+10:00:27 DEBUG: Responses: {&#39;squad&#39;: defaultdict(&lt;class &#39;list&#39;&gt;, {&#39;rnet&#39;: [], &#39;bert&#39;: []}), &#39;faq&#39;: defaultdict(&lt;class &#39;list&#39;&gt;, {&#39;tfidf&#39;: [&#39;Two&#39;]})}
+</pre>
+</div>
+</div>
 
-1: Two
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="format_responses" class="doc_header"><code>format_responses</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L184" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>format_responses</code>(<strong><code>dict_responses</code></strong>)</p>
+</blockquote>
+<p>Format question-response pair</p>
+<p>INPUT:</p>
+<ul>
+<li>dictionary of responses </li>
+</ul>
+<p>OUTPUT:</p>
+<ul>
+<li><p>list of flattened responses</p>
+</li>
+<li><p>response as string</p>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#test</span>
+<span class="k">def</span> <span class="nf">test_format_responses</span><span class="p">():</span>
+    <span class="n">dict_responses</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;sq&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sq_11&#39;</span><span class="p">,</span> <span class="s1">&#39;sq_12&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sq_21&#39;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;fq&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;fq_11&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;fq_21&#39;</span><span class="p">,</span> <span class="s1">&#39;fq_22&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">flatten_responses</span><span class="p">,</span> <span class="n">formatted_response</span> <span class="o">=</span> <span class="n">format_responses</span><span class="p">(</span>
+        <span class="n">dict_responses</span><span class="o">=</span><span class="n">dict_responses</span>
+    <span class="p">)</span>
+    <span class="n">expected_arr</span> <span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;sq_11&#39;</span><span class="p">,</span> <span class="s1">&#39;sq_12&#39;</span><span class="p">,</span> <span class="s1">&#39;sq_21&#39;</span><span class="p">,</span> <span class="s1">&#39;fq_11&#39;</span><span class="p">,</span> <span class="s1">&#39;fq_21&#39;</span><span class="p">,</span> <span class="s1">&#39;fq_22&#39;</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">flatten_responses</span> <span class="o">==</span> <span class="n">expected_arr</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">res</span> <span class="ow">in</span> <span class="n">formatted_response</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">expected_arr</span><span class="p">)</span>
+<span class="n">test_format_responses</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>10:00:28 DEBUG:[&#39;sq_11&#39;, &#39;sq_12&#39;, &#39;sq_21&#39;, &#39;fq_11&#39;, &#39;fq_21&#39;, &#39;fq_22&#39;]
+10:00:28 DEBUG:
+ Answers:
+
+1: fq_21
+2: sq_21
+3: fq_11
+4: sq_11
+5: sq_12
+6: fq_22
 
 </pre>
 </div>
@@ -1002,7 +1198,7 @@ arr is array of dictionaries</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_input" class="doc_header"><code>get_input</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L185" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_input</code>(<strong><code>text</code></strong>)</p>
+<h4 id="get_input" class="doc_header"><code>get_input</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L207" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_input</code>(<strong><code>text</code></strong>)</p>
 </blockquote>
 <p>This redundancy is needed for testing</p>
 
@@ -1027,7 +1223,7 @@ arr is array of dictionaries</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="question_response" class="doc_header"><code>question_response</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L190" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>question_response</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>num_returned_values_per_squad_model</code></strong>=<em><code>1</code></em>)</p>
+<h4 id="question_response" class="doc_header"><code>question_response</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L212" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>question_response</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>, <strong><code>num_returned_values_per_squad_model</code></strong>=<em><code>1</code></em>)</p>
 </blockquote>
 <p>Receive response and call get_response()</p>
 
@@ -1141,20 +1337,30 @@ arr is array of dictionaries</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:12:37 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
-09:13:10 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+<pre>10:00:46 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+10:01:02 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
-09:13:20 DEBUG:Responses: [list([[&#39;Intekglobal&#39;], [0], [160.03579711914062]])
+10:01:09 DEBUG:Responses: [list([[&#39;Intekglobal&#39;], [0], [160.03579711914062]])
  list([[&#39;Intekglobal&#39;], [3], [244.86245727539062]])
  list([[&#39;one of the smartest minds on the planet&#39;], [19], [1664652.0]])]
-09:13:20 DEBUG:Top Responses: [&#39;one of the smartest minds on the planet&#39;]
-09:13:24 DEBUG:Responses: [list([[&#39;&#39;], [-1], [0.0011892060283571482]])
+10:01:09 DEBUG:Top Responses: [&#39;one of the smartest minds on the planet&#39;]
+10:01:13 DEBUG:Responses: [list([[&#39;&#39;], [-1], [0.0011892060283571482]])
  list([[&#39;&#39;], [-1], [0.01691678911447525]])
  list([[&#39;one of the smartest minds on the planet, \n                   he currently works as Intekglobal employee&#39;], [19], [18812.87109375]])]
-09:13:24 DEBUG:Top Responses: [&#39;one of the smartest minds on the planet, \n                   he currently works as Intekglobal employee&#39;]
-09:13:24 DEBUG:  Who is Enrique Jimenez?
-09:13:24 DEBUG:  Who is Enrique Jimenez?:
+10:01:13 DEBUG:Top Responses: [&#39;one of the smartest minds on the planet, \n                   he currently works as Intekglobal employee&#39;]
+10:01:13 DEBUG:[&#39;one of the smartest minds on the planet&#39;, &#39;one of the smartest minds on the planet, \n                   he currently works as Intekglobal employee&#39;, &#39;yes&#39;]
+10:01:13 DEBUG:
+ Answers:
+
+1: one of the smartest minds on the planet, 
+                   he currently works as Intekglobal employee
+2: one of the smartest minds on the planet
+3: yes
+
+10:01:13 DEBUG:  Who is Enrique Jimenez?
+10:01:13 DEBUG:  
+ Answers:
 
 1: one of the smartest minds on the planet, 
                    he currently works as Intekglobal employee
@@ -1189,10 +1395,19 @@ arr is array of dictionaries</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="new_question_answer" class="doc_header"><code>new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L202" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_question_answer</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>)</p>
+<h4 id="new_question_answer" class="doc_header"><code>new_question_answer</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L225" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_question_answer</code>(<strong><code>data</code></strong>, <strong><code>qa_models</code></strong>)</p>
 </blockquote>
 <p>Asks for a new question-answer pair; store the result in the
-faq dataframe and retrain the faq-model</p>
+    faq dataframe and retrain the faq-model</p>
+<p>INPUT:</p>
+<ul>
+<li>dictionary of data</li>
+<li><p>dictionary of question-answer models
+OUTPUT:</p>
+</li>
+<li><p>None: Updates the dictionaries of data and models</p>
+</li>
+</ul>
 
 </div>
 
@@ -1254,15 +1469,15 @@ faq dataframe and retrain the faq-model</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:13:50 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
-09:14:23 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
+<pre>10:01:41 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_model/model
+10:02:09 INFO:Restoring parameters from /home/jovyan/.deeppavlov/models/squad_bert/model
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
   FutureWarning)
 /opt/conda/lib/python3.7/site-packages/sklearn/linear_model/logistic.py:469: FutureWarning: Default multi_class will be changed to &#39;auto&#39; in 0.22. Specify the multi_class option to silence this warning.
   &#34;this warning.&#34;, FutureWarning)
-09:14:35 INFO:FAQ dataset and model updated..
+10:02:20 INFO:FAQ dataset and model updated..
 </pre>
 </div>
 </div>
@@ -1291,9 +1506,17 @@ faq dataframe and retrain the faq-model</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="new_context" class="doc_header"><code>new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L223" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_context</code>(<strong><code>data</code></strong>)</p>
+<h4 id="new_context" class="doc_header"><code>new_context</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L251" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>new_context</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
 <p>Stores the new context in the context dataframe</p>
+<p>INPUT:</p>
+<ul>
+<li><p>dictionary of data
+OUTPUT:</p>
+</li>
+<li><p>None: Updates the dictionary of data</p>
+</li>
+</ul>
 
 </div>
 
@@ -1359,7 +1582,7 @@ faq dataframe and retrain the faq-model</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:14:35 DEBUG:&lt;function new_context at 0x7f5d18456680&gt;
+<pre>10:02:20 DEBUG:&lt;function new_context at 0x7f60e148c170&gt;
 /opt/conda/lib/python3.7/site-packages/pandas/core/frame.py:7138: FutureWarning: Sorting because non-concatenation axis is not aligned. A future version
 of pandas will change to not sort by default.
 
@@ -1368,7 +1591,7 @@ To accept the future behavior, pass &#39;sort=False&#39;.
 To retain the current behavior and silence the warning, pass &#39;sort=True&#39;.
 
   sort=sort,
-09:14:35 INFO:contexts dataset updated..
+10:02:20 INFO:contexts dataset updated..
 </pre>
 </div>
 </div>
@@ -1397,9 +1620,10 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_minimal_faq_questions" class="doc_header"><code>set_minimal_faq_questions</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L241" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_faq_questions</code>(<strong><code>data</code></strong>)</p>
+<h4 id="set_minimal_faq_questions" class="doc_header"><code>set_minimal_faq_questions</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L273" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_faq_questions</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
-<p>Sets the faq configurations that assure a proper operation</p>
+<p>Sets the faq configurations that assure a proper operation.</p>
+<p>If inexistent, a non-empty dataframe for faq is created with 'Question' and 'Answer as columns'</p>
 
 </div>
 
@@ -1422,9 +1646,10 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_minimal_contexts" class="doc_header"><code>set_minimal_contexts</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L264" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_contexts</code>(<strong><code>data</code></strong>)</p>
+<h4 id="set_minimal_contexts" class="doc_header"><code>set_minimal_contexts</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L302" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_minimal_contexts</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
-<p>Sets the context configurations that assure a proper operation</p>
+<p>Sets the context configurations that assure a proper operation.</p>
+<p>If inexistent, a empy dataframe is created with 'topic' and 'context' as columns</p>
 
 </div>
 
@@ -1447,7 +1672,7 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="set_data_dict" class="doc_header"><code>set_data_dict</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L277" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_data_dict</code>(<strong><code>file</code></strong>, <strong><code>data</code></strong>, <strong><code>question_type</code></strong>, <strong><code>data_dir</code></strong>)</p>
+<h4 id="set_data_dict" class="doc_header"><code>set_data_dict</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L317" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>set_data_dict</code>(<strong><code>file</code></strong>, <strong><code>data</code></strong>, <strong><code>question_type</code></strong>, <strong><code>data_dir</code></strong>)</p>
 </blockquote>
 <p>Creates unexistent files</p>
 
@@ -1472,9 +1697,15 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_and_prepare_data" class="doc_header"><code>load_and_prepare_data</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L294" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_and_prepare_data</code>(<strong><code>context_data_file</code></strong>, <strong><code>faq_data_file</code></strong>, <strong><code>data</code></strong>, <strong><code>configs_faq</code></strong>)</p>
+<h4 id="load_and_prepare_data" class="doc_header"><code>load_and_prepare_data</code><a href="https://github.com/kikejimenez/let_me_answer_for_you/tree/master/let_me_answer_for_you/settings.py#L334" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_and_prepare_data</code>(<strong><code>context_data_file</code></strong>, <strong><code>faq_data_file</code></strong>, <strong><code>data</code></strong>, <strong><code>configs_faq</code></strong>)</p>
 </blockquote>
-<p>Calls the context and faq configuration routines</p>
+<p>Calls the context and faq configuration routines.</p>
+<p>If dataframe files missing, it will create them in data directory.</p>
+<p>If the data frames are provided they must have the following columns  for proper functioning:</p>
+<ul>
+<li>context: 'topic', 'context'</li>
+<li>faq: 'Question, 'Answer'</li>
+</ul>
 
 </div>
 
@@ -1500,7 +1731,6 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
 <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">rmtree</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span><span class="n">popen</span>
 <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
-<span class="c1">#from let_me_answer_for_you.settings import *</span>
 
 
 <span class="k">def</span> <span class="nf">test_set_minimal_faqs_with_more_than_one_question</span><span class="p">():</span>
@@ -1570,7 +1800,6 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
             <span class="n">configs_faq</span><span class="o">=</span><span class="kc">None</span>
         <span class="p">)</span>
         <span class="n">data_dir</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
-        <span class="c1">#config_file = path.join(tmpdirname,&#39;config_faq.json&#39;)</span>
         <span class="k">assert</span> <span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 
 
@@ -1591,15 +1820,15 @@ To retain the current behavior and silence the warning, pass &#39;sort=True&#39;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>09:14:35 INFO: File created at /tmp/tmpe1fzbn5r/tmp_data.csv
-09:14:35 INFO: File created at /tmp/tmpi4mgn_tl/tmp_data.csv
-09:14:35 INFO: File created at /tmp/tmp006qpt5n/context_data.csv
-09:14:35 DEBUG:{&#39;context&#39;: defaultdict(&lt;class &#39;str&#39;&gt;, {&#39;path&#39;: &#39;/tmp/tmp006qpt5n/context_data.csv&#39;, &#39;df&#39;: Empty DataFrame
+<pre>10:02:20 INFO: File created at /tmp/tmptuu9vt86/tmp_data.csv
+10:02:20 INFO: File created at /tmp/tmphqp6ty6p/tmp_data.csv
+10:02:20 INFO: File created at /tmp/tmpaj9wgtv5/context_data.csv
+10:02:20 DEBUG:{&#39;context&#39;: defaultdict(&lt;class &#39;str&#39;&gt;, {&#39;path&#39;: &#39;/tmp/tmpaj9wgtv5/context_data.csv&#39;, &#39;df&#39;: Empty DataFrame
 Columns: [topic, context]
 Index: []})}
-09:14:35 INFO:Data directory created at /tmp/tmpn3sct0bz/data
-09:14:35 INFO: File created at /tmp/tmpn3sct0bz/data/faq_data.csv
-09:14:35 INFO: File created at /tmp/tmpn3sct0bz/data/context_data.csv
+10:02:20 INFO:Data directory created at /tmp/tmp8srz9dtl/data
+10:02:20 INFO: File created at /tmp/tmp8srz9dtl/data/faq_data.csv
+10:02:20 INFO: File created at /tmp/tmp8srz9dtl/data/context_data.csv
 </pre>
 </div>
 </div>
