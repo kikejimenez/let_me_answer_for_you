@@ -41,7 +41,7 @@ It is strongly recommended to consult the [deeppavlov library](https://deeppavlo
 
 The package `let_me_answer_for_you` consists of three modules: [settings](/let_me_answer_for_you/settings), [dialog_system](/let_me_answer_for_you/dialog_system) and [chatbot](/let_me_answer_for_you/chatbot).
 
-The `chatbot.py` file of the repo, calls the `ChatBot` class in `chatbot` and is the child of the `DialogSystem` class in `dialog_system`. This last class  has the three main methods of the library:  
+The `chatbot.py` file of the repo, calls the `ChatBot` class in `chatbot`. This class is a child of the `DialogSystem` class in `dialog_system`. The `DialogSystem`  class has the three main methods of the library:  
 
   1. [question_answering](/let_me_answer_for_you/dialog_system#DialogSystem.question_answer)
   2. [new_question_answer](/let_me_answer_for_you/dialog_system#DialogSystem.new_question_answer)
