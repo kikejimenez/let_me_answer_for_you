@@ -13,7 +13,7 @@ pip install let_me_answer_for_you
 
 ## Simple Usage
 
-Download the file `chatbot.py` of the [GitHub](https://github.com/kikejimenez/let_me_answer_for_you) repository and run: 
+After the package is installed, download the file `chatbot.py` of the [GitHub](https://github.com/kikejimenez/let_me_answer_for_you) repository and run: 
 
 ```
 python chatbot.py
@@ -24,6 +24,8 @@ After the installation process is finished,  the following interface appears:
 <img alt="Exporting from nbdev" width="800" caption="In this example neither the FAQ or context datasets have samples. After the first context is added, it appears as a reponse to the typed answer." src="nbs/images/context_spacex.gif">
 
 <img alt="Exporting from nbdev" width="800" caption="The example adds a new question-answer pair. The context of the first example also provides an answer." src="nbs/images/spacex_faq.gif">
+
+In the first example, neither the FAQ or context datasets have samples. After the first context is added, it appears as a reponse to the typed answer. The second example adds a new question-answer pair. The context of the first example also provides an answer.
 
 ## Technologies
 
