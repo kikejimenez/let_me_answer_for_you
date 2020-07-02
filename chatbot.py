@@ -1,7 +1,11 @@
-from os import popen
+''' chatbot.py
+
+Instantiates the `ChatBot` class and calls `chatbot` method of the package `let_me_anwer_for_you`
+
+The set of possible arguments of the module, can be printed  with the command 'python chatbot.py -h' 
+'''
 import argparse
 
-popen('pip install let_me_answer_for_you')
 from let_me_answer_for_you.chatbot import ChatBot
 
 parser = argparse.ArgumentParser(
